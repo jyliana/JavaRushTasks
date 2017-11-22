@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_javarushtasks" default="compile.module.javarushtasks">
+  <dirname property="module.javarushtasks.basedir" file="${ant.file.module_javarushtasks}"/>
+  
+  <property name="module.jdk.home.javarushtasks" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.javarushtasks" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.javarushtasks" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.javarushtasks" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="javarushtasks.output.dir" value="${module.javarushtasks.basedir}/../out/production/JavaRushTasks"/>
+  <property name="javarushtasks.testoutput.dir" value="${module.javarushtasks.basedir}/../out/test/JavaRushTasks"/>
+  
+  <path id="javarushtasks.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="javarushtasks.module.production.classpath">
+    <path refid="${module.jdk.classpath.javarushtasks}"/>
+  </path>
+  
+  <path id="javarushtasks.runtime.production.module.classpath">
+    <pathelement location="${javarushtasks.output.dir}"/>
+  </path>
+  
+  <path id="javarushtasks.module.classpath">
+    <path refid="${module.jdk.classpath.javarushtasks}"/>
+    <pathelement location="${javarushtasks.output.dir}"/>
+  </path>
+  
+  <path id="javarushtasks.runtime.module.classpath">
+    <pathelement location="${javarushtasks.testoutput.dir}"/>
+    <pathelement location="${javarushtasks.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.javarushtasks">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.javarushtasks">
+    <patternset refid="excluded.from.module.javarushtasks"/>
+  </patternset>
+  
+  
+  <target name="compile.module.javarushtasks" depends="compile.module.javarushtasks.production,compile.module.javarushtasks.tests" description="Compile module JavaRushTasks"/>
+  
+  <target name="compile.module.javarushtasks.production" depends="register.custom.compilers" description="Compile module JavaRushTasks; production classes"/>
+  
+  <target name="compile.module.javarushtasks.tests" depends="register.custom.compilers,compile.module.javarushtasks.production" description="compile module JavaRushTasks; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.javarushtasks" description="cleanup module">
+    <delete dir="${javarushtasks.output.dir}"/>
+    <delete dir="${javarushtasks.testoutput.dir}"/>
+  </target>
+</project>
