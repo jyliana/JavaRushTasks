@@ -3,7 +3,8 @@
 out
 *.xml
 *.iml
-.properties
+*.properties
+.idea
 
 
 # Log file
