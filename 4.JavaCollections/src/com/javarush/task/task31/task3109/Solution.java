@@ -34,6 +34,7 @@ public class Solution {
                 properties.loadFromXML(inStream);
             else
                 properties.load(inStream);
+            inStream.close();
 
         } catch (IOException e) {
             return properties;
