@@ -20,8 +20,6 @@ public class Solution {
     public static void main(String[] args) throws IOException {
         Path fileName = Paths.get(args[0]);
         ZipInputStream inputZip = new ZipInputStream(new FileInputStream(args[1]));
-        ZipOutputStream outputZip = new ZipOutputStream(new FileOutputStream(args[1]));
-
         Map<String, ByteArrayOutputStream> map = new HashMap<>();
         ZipEntry entry;
         while ((entry = inputZip.getNextEntry()) != null) {
@@ -30,13 +28,13 @@ public class Solution {
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             byte[] buffer = new byte[1024];
             int count;
-            while ((count = inputZip.read(buffer)) != -1)
+            while ((count = inputZip.read(buffer)) > 0)
                 byteArrayOutputStream.write(buffer, 0, count);
             map.put(entry.getName(), byteArrayOutputStream);
         }
         inputZip.close();
 
-
+        ZipOutputStream outputZip = new ZipOutputStream(new FileOutputStream(args[1]));
         for (Map.Entry<String, ByteArrayOutputStream> line : map.entrySet()) {
             entry = new ZipEntry(line.getKey());
             outputZip.putNextEntry(entry);
@@ -45,6 +43,5 @@ public class Solution {
         outputZip.putNextEntry(new ZipEntry("new/" + fileName.getFileName()));
         Files.copy(fileName, outputZip);
         outputZip.close();
-
     }
 }
