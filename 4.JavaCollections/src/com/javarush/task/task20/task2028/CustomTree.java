@@ -34,10 +34,10 @@ public class CustomTree extends AbstractList<String> implements Cloneable, Seria
             Entry<String> currentNode = queue.poll();
             size++;
             if (currentNode.leftChild != null) {
-                queue.offer(currentNode.leftChild);
+                queue.add(currentNode.leftChild);
             }
             if (currentNode.rightChild != null) {
-                queue.offer(currentNode.rightChild);
+                queue.add(currentNode.rightChild);
             }
         }
         return size;
@@ -71,10 +71,10 @@ public class CustomTree extends AbstractList<String> implements Cloneable, Seria
                 return;
             } else {
                 if (currentNode.leftChild != null) {
-                    queue.offer(currentNode.leftChild);
+                    queue.add(currentNode.leftChild);
                 }
                 if (currentNode.rightChild != null) {
-                    queue.offer(currentNode.rightChild);
+                    queue.add(currentNode.rightChild);
                 }
             }
         }
@@ -97,14 +97,14 @@ public class CustomTree extends AbstractList<String> implements Cloneable, Seria
                     currentNode.leftChild = null;
                     return true;
                 }
-                queue.offer(currentNode.leftChild);
+                queue.add(currentNode.leftChild);
             }
             if (currentNode.rightChild != null) {
                 if (currentNode.rightChild.elementName.equals(s)) {
                     currentNode.rightChild = null;
                     return true;
                 }
-                queue.offer(currentNode.rightChild);
+                queue.add(currentNode.rightChild);
             }
         }
         return false;
@@ -135,10 +135,10 @@ public class CustomTree extends AbstractList<String> implements Cloneable, Seria
                 return currentNode.parent.elementName;
             } else {
                 if (currentNode.leftChild != null) {
-                    queue.offer(currentNode.leftChild);
+                    queue.add(currentNode.leftChild);
                 }
                 if (currentNode.rightChild != null) {
-                    queue.offer(currentNode.rightChild);
+                    queue.add(currentNode.rightChild);
                 }
             }
         }
