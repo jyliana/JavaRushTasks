@@ -1,10 +1,10 @@
-package com.javarush.task.task21.task2104;
+package com.javarush.task.task21.task2105;
 
 import java.util.HashSet;
 import java.util.Set;
 
 /* 
-Equals and HashCode
+Исправить ошибку. Сравнение объектов
 */
 public class Solution {
     private final String first, last;
@@ -16,8 +16,8 @@ public class Solution {
 
     public static void main(String[] args) {
         Set<Solution> s = new HashSet<>();
-        s.add(new Solution("Donald", "Duck"));
-        System.out.println(s.contains(new Solution("Donald", "Duck")));
+        s.add(new Solution("Mickey", "Mouse"));
+        System.out.println(s.contains(new Solution("Mickey", "Mouse")));
     }
 
     @Override
@@ -28,8 +28,7 @@ public class Solution {
 
         Solution solution = (Solution) o;
 
-        if (first != null ? !first.equals(solution.first) : solution.first != null)
-            return false;
+        if (first != null ? !first.equals(solution.first) : solution.first != null) return false;
         return last != null ? last.equals(solution.last) : solution.last == null;
 
     }
