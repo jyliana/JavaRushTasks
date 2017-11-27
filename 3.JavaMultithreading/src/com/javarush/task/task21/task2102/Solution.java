@@ -17,6 +17,8 @@ public class Solution {
     }
 
     public static boolean isAllModifiersContainSpecificModifier(int allModifiers, int specificModifier) {
+        if ((allModifiers & specificModifier) == specificModifier)
+            return true;
         return false;
     }
 
@@ -25,7 +27,6 @@ public class Solution {
         for (Method method : methods) {
             if (method.getName().equalsIgnoreCase("main")) return method;
         }
-
         return null;
     }
 }
