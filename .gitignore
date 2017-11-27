@@ -5,8 +5,7 @@ out
 *.iml
 *.properties
 .idea
-*Test.java
-
+4.JavaCollections/src/Test.java
 
 
 # Log file
