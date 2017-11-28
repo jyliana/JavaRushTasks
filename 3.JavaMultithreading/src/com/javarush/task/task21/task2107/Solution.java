@@ -34,6 +34,7 @@ public class Solution implements Cloneable {
         for (Map.Entry<String, User> pair : users.entrySet()) {
             new_solution.users.put(pair.getKey(), pair.getValue());
         }
+        /*new_solution.users.putAll(this.users);*/
         return new_solution;
     }
 
