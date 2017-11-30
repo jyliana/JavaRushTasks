@@ -25,20 +25,17 @@ public class Solution {
         reader.close();
 
         List<String> list = new LinkedList<>(Arrays.asList(stringBuilder.toString().trim().split(" ")));
-        int count = list.size();
-        for (int i = 0; i < count; i++) {
-            String tmp = new StringBuilder(list.get(i)).reverse().toString();
-            for (int j = i + 1; j < count; j++) {
+        for (int i = 0; i < list.size(); i++) {
+            for (int j = i + 1; j < list.size(); j++) {
+                String tmp = new StringBuilder(list.get(i)).reverse().toString();
                 if (tmp.equals(list.get(j))) {
                     Pair pair = new Pair();
                     pair.first = list.get(j).toString();
                     pair.second = list.get(i).toString();
                     result.add(pair);
+                    list.remove(j);
                     list.remove(i);
-                    list.remove(j - 1);
-                    count -= 2;
-                    i--;
-                    break;
+                    j = i;
                 }
             }
         }
@@ -64,7 +61,6 @@ public class Solution {
 
             if (first != null ? !first.equals(pair.first) : pair.first != null) return false;
             return second != null ? second.equals(pair.second) : pair.second == null;
-
         }
 
         @Override
@@ -83,5 +79,4 @@ public class Solution {
 
         }
     }
-
 }
