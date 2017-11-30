@@ -30,8 +30,8 @@ public class Solution {
                 String tmp = new StringBuilder(list.get(i)).reverse().toString();
                 if (tmp.equals(list.get(j))) {
                     Pair pair = new Pair();
-                    pair.first = list.get(j).toString();
-                    pair.second = list.get(i).toString();
+                    pair.first = list.get(j);
+                    pair.second = list.get(i);
                     result.add(pair);
                     list.remove(j);
                     list.remove(i);
