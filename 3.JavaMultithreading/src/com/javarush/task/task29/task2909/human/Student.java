@@ -4,15 +4,14 @@ import java.util.Date;
 
 public class Student extends Human {
 
+    private int course;
     private double averageGrade;
     private String university;
     private Date beginningOfSession;
     private Date endOfSession;
 
     public Student(String name, int age, double averageGrade) {
-        super(false);
-        this.name = name;
-        this.age = age;
+        super(name, age);
         this.averageGrade = averageGrade;
     }
 
@@ -21,6 +20,10 @@ public class Student extends Human {
     }
 
     public void learn() {
+    }
+
+    public int getCourse() {
+        return course;
     }
 
     public String getUniversity() {
