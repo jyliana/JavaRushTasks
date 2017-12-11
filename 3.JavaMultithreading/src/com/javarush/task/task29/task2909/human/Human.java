@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Human implements Alive{
+public class Human implements Alive {
     public static final int FIRST = 1;
     public static final int SECOND = 2;
     public static final int THIRD = 3;
@@ -28,6 +28,10 @@ public class Human implements Alive{
         nextId++;
     }
 
+    public String getPosition() {
+        return "Человек";
+    }
+
     public List<Human> getChildren() {
         return Collections.unmodifiableList(children);
     }
@@ -39,6 +43,10 @@ public class Human implements Alive{
     public void removeChild(Human human) {
         if (children.contains(human))
             children.remove(human);
+    }
+
+    public void printData() {
+        System.out.println(getPosition() + ": " + name);
     }
 
     public int getBloodGroup() {
