@@ -6,21 +6,36 @@ public class Car {
     static public final int TRUCK = 0;
     static public final int SEDAN = 1;
     static public final int CABRIOLET = 2;
-
-    double fuel;
-
     public double summerFuelConsumption;
     public double winterFuelConsumption;
     public double winterWarmingUp;
-
+    double fuel;
     private int type;
 
     private boolean driverAvailable;
     private int numberOfPassengers;
 
-    public Car(int type, int numberOfPassengers) {
+    protected Car(int type, int numberOfPassengers) {
         this.type = type;
         this.numberOfPassengers = numberOfPassengers;
+    }
+
+    public static Car create(int type, int numberOfPassengers) {
+        Car car;
+        switch (type) {
+            case TRUCK:
+                car = new Truck(type, numberOfPassengers);
+                break;
+            case SEDAN:
+                car = new Sedan(type, numberOfPassengers);
+                break;
+            case CABRIOLET:
+                car = new Cabriolet(type, numberOfPassengers);
+                break;
+            default:
+                car = new Car(type, numberOfPassengers);
+        }
+        return car;
     }
 
     public int fill(double numberOfLiters) {
