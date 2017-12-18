@@ -7,11 +7,11 @@ import java.io.InputStreamReader;
 public class ConsoleHelper {
     private static BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
-    static void writeMessage(String message) {
+    public static void writeMessage(String message) {
         System.out.println(message);
     }
 
-    static String readString() {
+    public  static String readString() {
         while (true) {
             try {
                 return bufferedReader.readLine();
@@ -21,7 +21,7 @@ public class ConsoleHelper {
         }
     }
 
-    static int readInt() {
+    public static int readInt() {
         while (true) {
             try {
                 return Integer.parseInt(readString());
