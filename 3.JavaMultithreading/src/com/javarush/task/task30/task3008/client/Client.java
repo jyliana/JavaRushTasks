@@ -11,6 +11,34 @@ public class Client {
     protected Connection connection;
     private volatile boolean clientConnected = false;
 
+    public static void main(String[] args) {
+        Client client = new Client();
+        client.run();
+    }
+
+    public void run() {
+        SocketThread socketThread = getSocketThread();
+        socketThread.setDaemon(true);
+        socketThread.start();
+        synchronized (this) {
+            try {
+                this.wait();
+            } catch (InterruptedException e) {
+                ConsoleHelper.writeMessage("Error! The program will be closed.");
+            }
+        }
+        if (clientConnected == true) {
+            ConsoleHelper.writeMessage("Соединение установлено. Для выхода наберите команду 'exit'.");
+            while (clientConnected) {
+                String line = ConsoleHelper.readString();
+                if (line.equals("exit"))
+                    break;
+                if (shouldSendTextFromConsole())
+                    sendTextMessage(line);
+            }
+        } else ConsoleHelper.writeMessage("Произошла ошибка во время работы клиента.");
+    }
+
     protected String getServerAddress() {
         ConsoleHelper.writeMessage("Please enter server address: ");
         return ConsoleHelper.readString();
@@ -38,12 +66,29 @@ public class Client {
         try {
             connection.send(new Message(MessageType.TEXT, text));
         } catch (IOException e) {
-            ConsoleHelper.writeMessage("\"Something is wrong. Message cannot be delivered.");
+            ConsoleHelper.writeMessage("Something is wrong. Message cannot be delivered.");
             clientConnected = false;
         }
     }
 
     public class SocketThread extends Thread {
+        protected void processIncomingMessage(String message) {
+            ConsoleHelper.writeMessage(message);
+        }
 
+        protected void informAboutAddingNewUser(String userName) {
+            ConsoleHelper.writeMessage(userName + " entered the chat room.");
+        }
+
+        protected void informAboutDeletingNewUser(String userName) {
+            ConsoleHelper.writeMessage(userName + " left the chat room.");
+        }
+
+        protected void notifyConnectionStatusChanged(boolean clientConnected) {
+            Client.this.clientConnected = clientConnected;
+            synchronized (Client.this) {
+                Client.this.notify();
+            }
+        }
     }
 }
