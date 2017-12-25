@@ -6,9 +6,11 @@ import java.io.IOException;
 import java.nio.file.Paths;
 
 public class Archiver {
-    public static void main(String[] args) throws IOException {
-        FileManager fileManager = new FileManager(Paths.get("D:/tmp"));
-        fileManager.getFileList();
+    public static void main(String[] args) throws Exception {
+        /*FileManager fileManager = new FileManager(Paths.get("D:/tmp"));
+        fileManager.getFileList();*/
+        ZipFileManager zipFileManager = new ZipFileManager(Paths.get("D:/1tmp/tmp.zip"));
+        zipFileManager.createZip(Paths.get("D:/tmp"));
 
         Operation operation = null;
         do {
