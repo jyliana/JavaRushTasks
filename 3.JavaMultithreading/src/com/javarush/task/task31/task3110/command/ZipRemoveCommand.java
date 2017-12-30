@@ -13,10 +13,10 @@ public class ZipRemoveCommand extends ZipCommand {
 
         ZipFileManager zipFileManager = getZipFileManager();
 
-        ConsoleHelper.writeMessage("Введите название удаляемого файла:");
-        Path filePath = Paths.get(ConsoleHelper.readString());
-        zipFileManager.removeFile(filePath);
-        ConsoleHelper.writeMessage("Файл был удален.");
+        ConsoleHelper.writeMessage("Введите полный путь файла в архиве:");
+        Path sourcePath = Paths.get(ConsoleHelper.readString());
+        zipFileManager.removeFile(sourcePath);
 
+        ConsoleHelper.writeMessage("Удаление из архива завершено.");
     }
 }
