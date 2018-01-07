@@ -27,8 +27,27 @@ public class View extends JFrame implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
-
+    public void actionPerformed(ActionEvent event) {
+        switch (event.getActionCommand()) {
+            case "Новый":
+                controller.createNewDocument();
+                break;
+            case "Открыть":
+                controller.openDocument();
+                break;
+            case "Сохранить":
+                controller.saveDocument();
+                break;
+            case "Сохранить как...":
+                controller.saveDocumentAs();
+                break;
+            case "Выход":
+                controller.exit();
+                break;
+            case "О программе":
+                this.showAbout();
+                break;
+        }
     }
 
     public Controller getController() {
@@ -137,6 +156,6 @@ public class View extends JFrame implements ActionListener {
     }
 
     public void showAbout() {
-        JOptionPane.showMessageDialog(getContentPane(), "Первая программа с GUI", "Version 1.0", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(getContentPane(), "Первая программа с GUI\nVersion 1.0", "About", JOptionPane.INFORMATION_MESSAGE);
     }
 }
