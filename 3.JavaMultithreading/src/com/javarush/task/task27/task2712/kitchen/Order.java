@@ -19,8 +19,8 @@ public class Order {
     public String toString() {
         if (dishes.isEmpty()) return "";
         else
-            return "Your order[" +
+            return "Your order: " +
                     dishes +
-                    "] of " + tablet;
+                    " of " + tablet;
     }
 }
