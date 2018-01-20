@@ -1,5 +1,7 @@
 package com.javarush.task.task27.task2712.ad;
 
+import com.javarush.task.task27.task2712.ConsoleHelper;
+
 public class Advertisement {
     private Object content;
     private String name;
@@ -15,7 +17,11 @@ public class Advertisement {
         this.initialAmount = initialAmount;
         this.hits = hits;
         this.duration = duration;
-        this.amountPerOneDisplaying = initialAmount / hits;
+        try {
+            this.amountPerOneDisplaying = initialAmount / hits;
+        } catch (ArithmeticException e) {
+            ConsoleHelper.writeMessage("Error! These videos are not available anymore.");
+        }
     }
 
     public String getName() {
@@ -34,5 +40,9 @@ public class Advertisement {
         if (hits <= 0)
             throw new UnsupportedOperationException();
         hits--;
+    }
+
+    public int getHits() {
+        return hits;
     }
 }
