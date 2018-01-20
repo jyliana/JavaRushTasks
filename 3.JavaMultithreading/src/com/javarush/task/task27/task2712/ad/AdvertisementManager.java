@@ -1,5 +1,8 @@
 package com.javarush.task.task27.task2712.ad;
 
+import com.javarush.task.task27.task2712.statistic.StatisticManager;
+import com.javarush.task.task27.task2712.statistic.event.VideoSelectedEventDataRow;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -24,6 +27,8 @@ public class AdvertisementManager {
                 result = Long.compare(o2.getAmountPerOneDisplaying() / o2.getDuration(), o1.getAmountPerOneDisplaying() / o1.getDuration());
             return result;
         });
+
+        StatisticManager.getInstance().register(new VideoSelectedEventDataRow(playList, getTotalAmount(playList), getTotalDuration(playList)));
 
         for (Advertisement advertisement : playList) {
             System.out.printf("%s is displaying... %d, %d\n",
