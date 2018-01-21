@@ -56,13 +56,15 @@ public class AdvertisementManager {
 
     private int getTotalDuration(List<Advertisement> list) {
         int total = 0;
-        for (Advertisement advertisement : list) total += advertisement.getDuration();
+        for (Advertisement advertisement : list)
+            total += advertisement.getDuration();
         return total;
     }
 
     private int getTotalAmount(List<Advertisement> list) {
         int total = 0;
-        for (Advertisement advertisement : list) total += advertisement.getAmountPerOneDisplaying();
+        for (Advertisement advertisement : list)
+            total += advertisement.getAmountPerOneDisplaying();
         return total;
     }
 }
