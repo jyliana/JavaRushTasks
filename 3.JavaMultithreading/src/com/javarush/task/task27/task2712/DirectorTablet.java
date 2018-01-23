@@ -57,11 +57,5 @@ public class DirectorTablet {
             if (item.getValue() <= 0)
                 ConsoleHelper.writeMessage(item.getKey());
         }
-
-       /* StatisticAdvertisementManager manager = StatisticAdvertisementManager.getInstance();
-
-        for(Advertisement a : manager.getVideoList(StatisticAdvertisementManager.VideoType.NotActive)){
-            ConsoleHelper.writeMessage(a.getName());
-        }*/
     }
 }
