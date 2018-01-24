@@ -20,6 +20,10 @@ public class StatisticManager {
         return instance;
     }
 
+    public Set<Cook> getCooks() {
+        return cooks;
+    }
+
     public void register(EventDataRow data) {
         statisticStorage.put(data);
     }
