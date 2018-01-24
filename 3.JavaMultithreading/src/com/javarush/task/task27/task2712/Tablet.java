@@ -18,16 +18,13 @@ public class Tablet extends Observable {
         this.number = number;
     }
 
-    public Order createOrder() {
-        Order order = null;
-
+    public void createOrder() {
         try {
-            order = new Order(this);
+            Order order = new Order(this);
             refactoredOrder(order);
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Console is unavailable.");
         }
-        return order;
     }
 
     private void refactoredOrder(Order order) {
@@ -44,10 +41,9 @@ public class Tablet extends Observable {
     }
 
     public void createTestOrder() {
-        TestOrder testOrder = null;
 
         try {
-            testOrder = new TestOrder(this);
+            TestOrder testOrder = new TestOrder(this);
             refactoredOrder(testOrder);
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Console is unavailable.");
