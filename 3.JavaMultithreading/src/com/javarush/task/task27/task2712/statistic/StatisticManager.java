@@ -11,7 +11,7 @@ import java.util.*;
 public class StatisticManager {
     private static StatisticManager instance = new StatisticManager();
     private StatisticStorage statisticStorage = new StatisticStorage();
-    private Set<Cook> cooks = new HashSet<>();
+    /*private Set<Cook> cooks = new HashSet<>();*/
 
     private StatisticManager() {
     }
@@ -20,17 +20,17 @@ public class StatisticManager {
         return instance;
     }
 
-    public Set<Cook> getCooks() {
+    /*public Set<Cook> getCooks() {
         return cooks;
-    }
+    }*/
 
     public void register(EventDataRow data) {
         statisticStorage.put(data);
     }
 
-    public void register(Cook cook) {
+    /*public void register(Cook cook) {
         cooks.add(cook);
-    }
+    }*/
 
     public Map<Date, Long> getAdvertisementProfit() {
         Map<Date, Long> map = new TreeMap<>(Collections.reverseOrder());

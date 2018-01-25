@@ -9,10 +9,12 @@ import java.util.Observer;
 import java.util.Set;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class OrderManager implements Observer {
-    private LinkedBlockingQueue<Order> orderQueue = new LinkedBlockingQueue<>();
+public class OrderManager {
+/* should be deleted!!
 
-    public OrderManager() {
+public class OrderManager implements Observer {
+
+    public OrderManager(LinkedBlockingQueue<Order> orderQueue) {
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -39,5 +41,5 @@ public class OrderManager implements Observer {
     @Override
     public void update(Observable o, Object order) {
         orderQueue.offer((Order) order);
-    }
+    }*/
 }
