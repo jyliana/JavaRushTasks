@@ -17,8 +17,10 @@ public class Solution {
         String[] line = new StringBuffer(Integer.toString(number, 3)).reverse().toString().split("");
         int[] array = new int[line.length + 1];
         System.arraycopy(Arrays.stream(line).mapToInt(Integer::parseInt).toArray(), 0, array, 0, line.length);
+        StringBuilder result = new StringBuilder().append(number).append(" =");
+        String[] formats = {" - %d", "", " + %d"};
 
-        for (int i = 0; i < array.length - 1; i++) {
+        for (int i = 0; i < array.length; i++) {
             if (array[i] == 2) {
                 array[i] = -1;
                 array[i + 1]++;
@@ -32,11 +34,6 @@ public class Solution {
                 array[i] = 0;
                 array[i + 1]--;
             }
-        }
-
-        StringBuilder result = new StringBuilder().append(number).append(" =");
-        String[] formats = {" - %d", "", " + %d"};
-        for (int i = 0; i < array.length; i++) {
             result.append(String.format(formats[array[i] + 1], (int) Math.pow(3, i)));
         }
         System.out.println(result);
