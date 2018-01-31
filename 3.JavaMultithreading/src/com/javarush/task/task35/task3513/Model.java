@@ -47,9 +47,15 @@ public class Model {
         addTile();
         addTile();
         addTile();
+        addTile();
+        addTile();
+        addTile();
+        addTile();
         maxTile = 2;
         score = 0;
         left();
+        left();
+        canMove();
     }
 
     private boolean compressTiles(Tile[] tiles) {
@@ -133,5 +139,22 @@ public class Model {
             }
         }
         System.arraycopy(tmp_array, 0, gameTiles, 0, gameTiles.length);
+    }
+
+    public Tile[][] getGameTiles() {
+        return gameTiles;
+    }
+
+    public boolean canMove() {
+        if (!getEmptyTiles().isEmpty())
+            return true;
+
+        for (int i = 0; i < FIELD_WIDTH; i++) {
+            for (int j = 0; j < FIELD_WIDTH - 1; j++) {
+                if (gameTiles[j][i].value == gameTiles[j + 1][i].value || gameTiles[i][j].value == gameTiles[i][j + 1].value)
+                    return true;
+            }
+        }
+        return false;
     }
 }
