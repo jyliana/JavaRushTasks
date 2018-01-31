@@ -15,8 +15,10 @@ public class Model {
 
     private void addTile() {
         List<Tile> list = getEmptyTiles();
-        Tile tile = list.get((int) (list.size() * Math.random()));
-        tile.value = Math.random() < 0.9 ? 2 : 4;
+        if (list.size() > 0 && list != null) {
+            Tile tile = list.get((int) (list.size() * Math.random()));
+            tile.value = Math.random() < 0.9 ? 2 : 4;
+        }
     }
 
     private List<Tile> getEmptyTiles() {
@@ -43,20 +45,23 @@ public class Model {
         score = 0;
     }
 
-    private void compressTiles(Tile[] tiles) {
-
+    private boolean compressTiles(Tile[] tiles) {
+        boolean isChanged = false;
         for (int i = 0; i < FIELD_WIDTH; i++) {
             for (int j = 0; j < FIELD_WIDTH - i - 1; j++) {
                 if (tiles[j].value < tiles[j + 1].value && tiles[j].value == 0) {
                     int tmp = tiles[j].value;
                     tiles[j].value = tiles[j + 1].value;
                     tiles[j + 1].value = tmp;
+                    isChanged = true;
                 }
             }
         }
+        return isChanged;
     }
 
-    private void mergeTiles(Tile[] tiles) {
+    private boolean mergeTiles(Tile[] tiles) {
+        boolean isChanged = false;
         for (int i = 0; i < FIELD_WIDTH - 1; i++) {
             if (tiles[i].value != 0 && tiles[i].value == tiles[i + 1].value) {
                 tiles[i].value += tiles[i + 1].value;
@@ -66,8 +71,25 @@ public class Model {
                     maxTile = tiles[i].value;
                 }
                 i++;
+                isChanged = true;
             }
         }
-        compressTiles(tiles);
+        if (isChanged) {
+            compressTiles(tiles);
+        }
+        return isChanged;
+    }
+
+    public void left() {
+        boolean isChanged = false;
+        for (int i = 0; i < FIELD_WIDTH; i++) {
+            if (compressTiles(gameTiles[i]))
+                isChanged = true;
+            if (mergeTiles(gameTiles[i]))
+                isChanged = true;
+        }
+        if (isChanged) {
+            addTile();
+        }
     }
 }
