@@ -41,8 +41,15 @@ public class Model {
         }
         addTile();
         addTile();
+        addTile();
+        addTile();
+        addTile();
+        addTile();
+        addTile();
+        addTile();
         maxTile = 2;
         score = 0;
+        left();
     }
 
     private boolean compressTiles(Tile[] tiles) {
@@ -91,5 +98,40 @@ public class Model {
         if (isChanged) {
             addTile();
         }
+    }
+
+    public void right() {
+        rotate();
+        rotate();
+        left();
+        rotate();
+        rotate();
+    }
+
+    public void up() {
+        rotate();
+        rotate();
+        rotate();
+        left();
+        rotate();
+    }
+
+    public void down() {
+        rotate();
+        left();
+        rotate();
+        rotate();
+        rotate();
+    }
+
+    private void rotate() {
+        Tile[][] tmp_array = new Tile[FIELD_WIDTH][FIELD_WIDTH];
+
+        for (int i = 0; i < FIELD_WIDTH; i++) {
+            for (int j = 0; j < FIELD_WIDTH; j++) {
+                tmp_array[j][i] = gameTiles[FIELD_WIDTH - i - 1][j];
+            }
+        }
+        System.arraycopy(tmp_array, 0, gameTiles, 0, gameTiles.length);
     }
 }
