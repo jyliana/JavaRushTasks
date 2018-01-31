@@ -5,6 +5,8 @@ import java.util.List;
 
 public class Model {
     private static final int FIELD_WIDTH = 4;
+    protected int score;
+    protected int maxTile;
     private Tile[][] gameTiles = new Tile[FIELD_WIDTH][FIELD_WIDTH];
 
     public Model() {
@@ -37,5 +39,35 @@ public class Model {
         }
         addTile();
         addTile();
+        maxTile = 2;
+        score = 0;
+    }
+
+    private void compressTiles(Tile[] tiles) {
+
+        for (int i = 0; i < FIELD_WIDTH; i++) {
+            for (int j = 0; j < FIELD_WIDTH - i - 1; j++) {
+                if (tiles[j].value < tiles[j + 1].value && tiles[j].value == 0) {
+                    int tmp = tiles[j].value;
+                    tiles[j].value = tiles[j + 1].value;
+                    tiles[j + 1].value = tmp;
+                }
+            }
+        }
+    }
+
+    private void mergeTiles(Tile[] tiles) {
+        for (int i = 0; i < FIELD_WIDTH - 1; i++) {
+            if (tiles[i].value != 0 && tiles[i].value == tiles[i + 1].value) {
+                tiles[i].value += tiles[i + 1].value;
+                tiles[i + 1].value = 0;
+                score += tiles[i].value;
+                if (maxTile < tiles[i].value) {
+                    maxTile = tiles[i].value;
+                }
+                i++;
+            }
+        }
+        compressTiles(tiles);
     }
 }
