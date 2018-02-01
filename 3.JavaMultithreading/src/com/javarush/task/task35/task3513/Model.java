@@ -47,7 +47,6 @@ public class Model {
         addTile();
         maxTile = 2;
         score = 0;
-        randomMove();
     }
 
     private boolean compressTiles(Tile[] tiles) {
