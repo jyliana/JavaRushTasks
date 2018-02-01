@@ -13,8 +13,32 @@ public class Model {
     private Tile[][] gameTiles = new Tile[FIELD_WIDTH][FIELD_WIDTH];
     private boolean isSaveNeeded = true;
 
+
     public Model() {
         resetGameTiles();
+    }
+
+    public boolean hasBoardChanged() {
+        Tile[][] savedArray = (Tile[][]) previousStates.peek();
+        for (int i = 0; i < FIELD_WIDTH; i++) {
+            for (int j = 0; j < FIELD_WIDTH; j++) {
+                if (savedArray[i][j].value != gameTiles[i][j].value)
+                    return true;
+            }
+        }
+        return false;
+    }
+
+    public MoveEfficiency getMoveEfficiency(Move move) {
+        MoveEfficiency moveEfficiency;
+        move.move();
+
+        if (!hasBoardChanged())
+            moveEfficiency = new MoveEfficiency(-1, 0, move);
+        else
+            moveEfficiency = new MoveEfficiency(getEmptyTiles().size(), score, move);
+        rollback();
+        return moveEfficiency;
     }
 
     private void addTile() {
