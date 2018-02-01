@@ -41,21 +41,8 @@ public class Model {
         }
         addTile();
         addTile();
-        addTile();
-        addTile();
-        addTile();
-        addTile();
-        addTile();
-        addTile();
-        addTile();
-        addTile();
-        addTile();
-        addTile();
         maxTile = 2;
         score = 0;
-        left();
-        left();
-        canMove();
     }
 
     private boolean compressTiles(Tile[] tiles) {
