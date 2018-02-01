@@ -47,6 +47,7 @@ public class Model {
         addTile();
         maxTile = 2;
         score = 0;
+        randomMove();
     }
 
     private boolean compressTiles(Tile[] tiles) {
@@ -172,6 +173,24 @@ public class Model {
         if (!previousStates.isEmpty() && !previousScores.isEmpty()) {
             gameTiles = (Tile[][]) previousStates.pop();
             score = (int) previousScores.pop();
+        }
+    }
+
+    public void randomMove() {
+        int n = ((int) (Math.random() * 100)) % 4;
+        switch (n) {
+            case 0:
+                left();
+                break;
+            case 1:
+                right();
+                break;
+            case 2:
+                up();
+                break;
+            case 3:
+                down();
+                break;
         }
     }
 }
