@@ -35,6 +35,7 @@ public class Model {
         queue.offer(getMoveEfficiency(this::up));
         MoveEfficiency step = (MoveEfficiency) queue.poll();
         step.getMove().move();
+
     }
 
     public MoveEfficiency getMoveEfficiency(Move move) {
