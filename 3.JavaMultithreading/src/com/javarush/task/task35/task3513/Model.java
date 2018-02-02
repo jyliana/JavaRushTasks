@@ -1,8 +1,6 @@
 package com.javarush.task.task35.task3513;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 public class Model {
     private static final int FIELD_WIDTH = 4;
@@ -27,6 +25,17 @@ public class Model {
             }
         }
         return false;
+    }
+
+    public void autoMove() {
+        PriorityQueue queue = new PriorityQueue(4, Collections.reverseOrder());
+        queue.offer(getMoveEfficiency(this::left));
+        queue.offer(getMoveEfficiency(this::right));
+        queue.offer(getMoveEfficiency(this::down));
+        queue.offer(getMoveEfficiency(this::up));
+        MoveEfficiency step = (MoveEfficiency) queue.poll();
+        step.getMove().move();
+
     }
 
     public MoveEfficiency getMoveEfficiency(Move move) {
