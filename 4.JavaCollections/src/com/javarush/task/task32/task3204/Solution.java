@@ -16,27 +16,21 @@ public class Solution {
     }
 
     public static ByteArrayOutputStream getPassword() throws IOException {
-        char[] numbers = new char[10];
-        char[] letters = new char[26];
-
-        int tmp, i;
-        for (tmp = 48, i = 0; i < numbers.length; i++, tmp++) {
-            numbers[i] = (char) tmp;
-        }
-        for (tmp = 97, i = 0; i < letters.length; i++, tmp++) {
-            letters[i] = (char) tmp;
-        }
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         List<Object> list = new ArrayList<>();
-        list.add(numbers[(int) (Math.random() * numbers.length)]);
-        for (int j = 1; j < 8; j++) {
-            String line = String.valueOf(letters[(int) (Math.random() * letters.length)]);
+        int min = 97, max = 122;
+
+        for (int j = 0; j < 8; j++) {
+            String line = String.valueOf((char) (min + (Math.random() * (max - min))));
             if (j % 2 == 0) {
                 list.add(line.toUpperCase());
-            } else
+            } else if (j % 3 == 0)
+                list.add((int) (Math.random() * 10));
+            else
                 list.add(line);
         }
         Collections.shuffle(list);
+
         for (Object item : list) {
             stream.write(item.toString().getBytes());
         }
