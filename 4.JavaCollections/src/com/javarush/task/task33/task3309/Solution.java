@@ -33,22 +33,23 @@ public class Solution {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document document = builder.newDocument();
-
         marshaller.marshal(obj, document);
 
-        NodeList list = document.getElementsByTagName(tagName);
-        Node topNode = document.getDocumentElement();
-        Node currentNode;
-        for (currentNode = topNode.getFirstChild(); currentNode != null; currentNode = currentNode.getNextSibling()) {
-            if (currentNode.getTextContent().matches(".*[<>&'\"].*")) {
-                CDATASection cdata = document.createCDATASection(currentNode.getTextContent());
-                currentNode.replaceChild(cdata, currentNode.getFirstChild());
+        NodeList listWithTag = document.getElementsByTagName(tagName);
+        NodeList nodeList = document.getElementsByTagName("*");
+
+        for (int i = 0; i < nodeList.getLength(); i++) {
+            Node thisNode = nodeList.item(i).getFirstChild();
+            if (thisNode.getTextContent().matches(".*[<>&\'\"].*")) {
+                CDATASection cdataSection = document.createCDATASection(thisNode.getTextContent());
+                nodeList.item(i).replaceChild(cdataSection, thisNode);
             }
         }
 
-        for (int i = 0; i < list.getLength(); i++) {
-            list.item(i).getParentNode().insertBefore(document.createComment(comment), list.item(i));
+        for (int i = 0; i < listWithTag.getLength(); i++) {
+            listWithTag.item(i).getParentNode().insertBefore(document.createComment(comment), listWithTag.item(i));
         }
+
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = transformerFactory.newTransformer();
         transformer.setOutputProperty(OutputKeys.INDENT, "yes");
