@@ -34,8 +34,7 @@ public class Solution {
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document document = builder.newDocument();
         marshaller.marshal(obj, document);
-
-        NodeList listWithTag = document.getElementsByTagName(tagName);
+        
         NodeList nodeList = document.getElementsByTagName("*");
 
         for (int i = 0; i < nodeList.getLength(); i++) {
@@ -44,10 +43,9 @@ public class Solution {
                 CDATASection cdataSection = document.createCDATASection(thisNode.getTextContent());
                 nodeList.item(i).replaceChild(cdataSection, thisNode);
             }
-        }
-
-        for (int i = 0; i < listWithTag.getLength(); i++) {
-            listWithTag.item(i).getParentNode().insertBefore(document.createComment(comment), listWithTag.item(i));
+            if (nodeList.item(i).getNodeName().equals(tagName)) {
+                nodeList.item(i).getParentNode().insertBefore(document.createComment(comment), nodeList.item(i));
+            }
         }
 
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
@@ -61,7 +59,6 @@ public class Solution {
         System.out.println(toXmlWithComment(new First(), "nothing", "it's a comment"));
         System.out.println("--------------------------------------------------------------------------------------------------------------------");
         System.out.println(toXmlWithComment(new First(), "second", "it's a comment"));
-
     }
 }
 
