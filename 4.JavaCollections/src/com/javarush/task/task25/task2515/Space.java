@@ -46,4 +46,13 @@ public class Space {
     public ArrayList<Bomb> getBombs() {
         return bombs;
     }
+
+    public void run() {
+    }
+
+    public void draw() {
+    }
+
+    public void sleep(int ms) {
+    }
 }
