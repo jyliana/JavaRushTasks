@@ -3,6 +3,7 @@ package com.javarush.task.task25.task2515;
 import java.util.ArrayList;
 
 public class Space {
+    public static Space game;
     private int width;
     private int height;
     private SpaceShip ship;
@@ -16,7 +17,10 @@ public class Space {
     }
 
     public static void main(String[] args) {
-
+        Canvas canvas = new Canvas(10, 5);
+        canvas.print();
+        canvas.clear();
+        canvas.print();
     }
 
     public int getWidth() {
