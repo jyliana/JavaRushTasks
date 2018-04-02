@@ -1,6 +1,5 @@
 package com.javarush.task.task33.task3310.strategy;
 
-import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.nio.file.Files;
@@ -14,7 +13,7 @@ public class FileBucket {
             this.path = Files.createTempFile("temp-", ".tmp");
             Files.deleteIfExists(path);
             Files.createFile(path);
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         path.toFile().deleteOnExit();
@@ -24,7 +23,7 @@ public class FileBucket {
         long size = 0l;
         try {
             size = Files.size(path);
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return size;
@@ -33,7 +32,7 @@ public class FileBucket {
     public void putEntry(Entry entry) {
         try (ObjectOutputStream out = new ObjectOutputStream(Files.newOutputStream(path))) {
             out.writeObject(entry);
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -54,7 +53,7 @@ public class FileBucket {
     public void remove() {
         try {
             Files.delete(path);
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
