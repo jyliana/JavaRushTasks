@@ -1,5 +1,6 @@
 package com.javarush.task.task39.task3913;
 
+import com.javarush.task.task39.task3913.query.DateQuery;
 import com.javarush.task.task39.task3913.query.IPQuery;
 import com.javarush.task.task39.task3913.query.UserQuery;
 
@@ -14,7 +15,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class LogParser implements IPQuery, UserQuery {
+public class LogParser implements IPQuery, UserQuery, DateQuery {
     private List<MyLog> list = new ArrayList<>();
     private Path logDir;
 
@@ -65,7 +66,7 @@ public class LogParser implements IPQuery, UserQuery {
         return list;
     }
 
-    private Set<MyLog> getDataForPeriod(final Date after, final Date before) {
+    private Set<MyLog> getDataForPeriod(Date after, Date before) {
         return list.stream()
                 .filter(log -> log.getDate().getTime() >= (after == null ? 0 : after.getTime())
                         && log.getDate().getTime() <= (before == null ? Long.MAX_VALUE : before.getTime()))
@@ -173,8 +174,7 @@ public class LogParser implements IPQuery, UserQuery {
     @Override
     public Set<String> getSolvedTaskUsers(Date after, Date before, int task) {
         return getDataForPeriod(after, before).stream()
-                .filter(log -> log.getEvent().equals(Event.SOLVE_TASK))
-                .filter(log -> log.getTaskNumber() == task)
+                .filter(log -> log.getEvent().equals(Event.SOLVE_TASK) && log.getTaskNumber() == task)
                 .map(log -> log.getUsername())
                 .collect(Collectors.toSet());
     }
@@ -190,9 +190,76 @@ public class LogParser implements IPQuery, UserQuery {
     @Override
     public Set<String> getDoneTaskUsers(Date after, Date before, int task) {
         return getDataForPeriod(after, before).stream()
-                .filter(log -> log.getEvent().equals(Event.DONE_TASK))
-                .filter(log -> log.getTaskNumber() == task)
+                .filter(log -> log.getEvent().equals(Event.DONE_TASK) && log.getTaskNumber() == task)
                 .map(log -> log.getUsername())
+                .collect(Collectors.toSet());
+    }
+
+    @Override
+    public Set<Date> getDatesForUserAndEvent(String user, Event event, Date after, Date before) {
+        return getDataForPeriod(after, before).stream()
+                .filter(log -> log.getUsername().equals(user) && log.getEvent().equals(event))
+                .map(log -> log.getDate())
+                .collect(Collectors.toSet());
+    }
+
+    @Override
+    public Set<Date> getDatesWhenSomethingFailed(Date after, Date before) {
+        return getDataForPeriod(after, before).stream()
+                .filter(log -> log.getStatus().equals(Status.FAILED))
+                .map(log -> log.getDate())
+                .collect(Collectors.toSet());
+    }
+
+    @Override
+    public Set<Date> getDatesWhenErrorHappened(Date after, Date before) {
+        return getDataForPeriod(after, before).stream()
+                .filter(log -> log.getStatus().equals(Status.ERROR))
+                .map(log -> log.getDate())
+                .collect(Collectors.toSet());
+    }
+
+    @Override
+    public Date getDateWhenUserLoggedFirstTime(String user, Date after, Date before) {
+        return getDatesForUserAndEvent(user, Event.LOGIN, after, before).stream()
+                .sorted()
+                .findFirst()
+                .orElse(null);
+    }
+
+    @Override
+    public Date getDateWhenUserSolvedTask(String user, int task, Date after, Date before) {
+        return getDataForPeriod(after, before).stream()
+                .filter(log -> log.getUsername().equals(user) && log.getEvent().equals(Event.SOLVE_TASK) && log.getTaskNumber() == task)
+                .map(log -> log.getDate())
+                .sorted()
+                .findFirst()
+                .orElse(null);
+    }
+
+    @Override
+    public Date getDateWhenUserDoneTask(String user, int task, Date after, Date before) {
+        return getDataForPeriod(after, before).stream()
+                .filter(log -> log.getUsername().equals(user) && log.getEvent().equals(Event.DONE_TASK) && log.getTaskNumber() == task)
+                .map(log -> log.getDate())
+                .sorted()
+                .findFirst()
+                .orElse(null);
+    }
+
+    @Override
+    public Set<Date> getDatesWhenUserWroteMessage(String user, Date after, Date before) {
+        return getDataForPeriod(after, before).stream()
+                .filter(log -> log.getUsername().equals(user) && log.getEvent().equals(Event.WRITE_MESSAGE))
+                .map(log -> log.getDate())
+                .collect(Collectors.toSet());
+    }
+
+    @Override
+    public Set<Date> getDatesWhenUserDownloadedPlugin(String user, Date after, Date before) {
+        return getDataForPeriod(after, before).stream()
+                .filter(log -> log.getUsername().equals(user) && log.getEvent().equals(Event.DOWNLOAD_PLUGIN))
+                .map(log -> log.getDate())
                 .collect(Collectors.toSet());
     }
 }

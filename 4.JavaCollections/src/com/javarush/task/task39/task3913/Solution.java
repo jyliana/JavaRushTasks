@@ -28,5 +28,8 @@ public class Solution {
         System.out.println(logParser.getSolvedTaskUsers(before, after, 17));
         System.out.println(logParser.getDoneTaskUsers(before, after));
         System.out.println(logParser.getDoneTaskUsers(null, after, 15));
+        System.out.println(logParser.getDatesForUserAndEvent("Inna", Event.SOLVE_TASK, null, null));
+        System.out.println(logParser.getDatesWhenSomethingFailed(null, null));
+        System.out.println(logParser.getDatesWhenErrorHappened(null, null));
     }
 }
