@@ -19,6 +19,14 @@ public class MyLog {
         this.status = status;
     }
 
+    public int getTaskNumber() {
+        return taskNumber;
+    }
+
+    public void setTaskNumber(int taskNumber) {
+        this.taskNumber = taskNumber;
+    }
+
     public String getIp() {
         return ip;
     }
