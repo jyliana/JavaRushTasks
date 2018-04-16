@@ -31,5 +31,13 @@ public class Solution {
         System.out.println(logParser.getDatesForUserAndEvent("Inna", Event.SOLVE_TASK, null, null));
         System.out.println(logParser.getDatesWhenSomethingFailed(null, null));
         System.out.println(logParser.getDatesWhenErrorHappened(null, null));
+        System.out.println(logParser.getNumberOfAllEvents(before, after));
+        System.out.println(logParser.getAllEvents(before, after));
+        System.out.println(logParser.getEventsForIP("146.34.15.5", before, after));
+        System.out.println(logParser.getEventsForUser("Amigo", before, after));
+        System.out.println(logParser.getNumberOfAttemptToSolveTask(17, null, after));
+        System.out.println(logParser.getNumberOfSuccessfulAttemptToSolveTask(15, null, after));
+        System.out.println(logParser.getAllSolvedTasksAndTheirNumber(null, after));
+        System.out.println(logParser.getAllDoneTasksAndTheirNumber(null, after));
     }
 }

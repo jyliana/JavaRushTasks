@@ -1,6 +1,7 @@
 package com.javarush.task.task39.task3913;
 
 import com.javarush.task.task39.task3913.query.DateQuery;
+import com.javarush.task.task39.task3913.query.EventQuery;
 import com.javarush.task.task39.task3913.query.IPQuery;
 import com.javarush.task.task39.task3913.query.UserQuery;
 
@@ -9,13 +10,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
-public class LogParser implements IPQuery, UserQuery, DateQuery {
+public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery {
     private List<MyLog> list = new ArrayList<>();
     private Path logDir;
 
@@ -261,5 +259,81 @@ public class LogParser implements IPQuery, UserQuery, DateQuery {
                 .filter(log -> log.getUsername().equals(user) && log.getEvent().equals(Event.DOWNLOAD_PLUGIN))
                 .map(log -> log.getDate())
                 .collect(Collectors.toSet());
+    }
+
+    @Override
+    public int getNumberOfAllEvents(Date after, Date before) {
+        return getDataForPeriod(after, before).stream()
+                .map(log -> log.getEvent())
+                .collect(Collectors.toSet()).size();
+    }
+
+    @Override
+    public Set<Event> getAllEvents(Date after, Date before) {
+        return getDataForPeriod(after, before).stream()
+                .map(log -> log.getEvent())
+                .collect(Collectors.toSet());
+    }
+
+    @Override
+    public Set<Event> getEventsForIP(String ip, Date after, Date before) {
+        return getDataForPeriod(after, before).stream()
+                .filter(log -> log.getIp().equals(ip))
+                .map(log -> log.getEvent())
+                .collect(Collectors.toSet());
+    }
+
+    @Override
+    public Set<Event> getEventsForUser(String user, Date after, Date before) {
+        return getDataForPeriod(after, before).stream()
+                .filter(log -> log.getUsername().equals(user))
+                .map(log -> log.getEvent())
+                .collect(Collectors.toSet());
+    }
+
+    @Override
+    public Set<Event> getFailedEvents(Date after, Date before) {
+        return getDataForPeriod(after, before).stream()
+                .filter(log -> log.getStatus().equals(Status.FAILED))
+                .map(log -> log.getEvent())
+                .collect(Collectors.toSet());
+    }
+
+    @Override
+    public Set<Event> getErrorEvents(Date after, Date before) {
+        return getDataForPeriod(after, before).stream()
+                .filter(log -> log.getStatus().equals(Status.ERROR))
+                .map(log -> log.getEvent())
+                .collect(Collectors.toSet());
+    }
+
+    @Override
+    public int getNumberOfAttemptToSolveTask(int task, Date after, Date before) {
+        return (int) getDataForPeriod(after, before).stream()
+                .filter(log -> log.getEvent().equals(Event.SOLVE_TASK) && log.getTaskNumber() == task)
+                .map(log -> log.getStatus())
+                .count();
+    }
+
+    @Override
+    public int getNumberOfSuccessfulAttemptToSolveTask(int task, Date after, Date before) {
+        return (int) getDataForPeriod(after, before).stream()
+                .filter(log -> log.getEvent().equals(Event.DONE_TASK) && log.getTaskNumber() == task)
+                .map(log -> log.getStatus())
+                .count();
+    }
+
+    @Override
+    public Map<Integer, Integer> getAllSolvedTasksAndTheirNumber(Date after, Date before) {
+        return getDataForPeriod(after, before).stream()
+                .filter(log -> log.getEvent().equals(Event.SOLVE_TASK))
+                .collect(Collectors.groupingBy(MyLog::getTaskNumber, Collectors.summingInt(x -> 1)));
+    }
+
+    @Override
+    public Map<Integer, Integer> getAllDoneTasksAndTheirNumber(Date after, Date before) {
+        return getDataForPeriod(after, before).stream()
+                .filter(log -> log.getEvent().equals(Event.DONE_TASK))
+                .collect(Collectors.groupingBy(MyLog::getTaskNumber, Collectors.summingInt(x -> 1)));
     }
 }
