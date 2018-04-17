@@ -16,28 +16,10 @@ public class Solution {
         System.out.println(logParser.getUniqueIPs(null, new Date()));
         System.out.println("Inna " + before + " " + logParser.getIPsForUser("Inna", before, new Date()) + " " + new Date());
         System.out.println(logParser.getIPsForEvent(Event.LOGIN, before, new Date()));
-        System.out.println(logParser.getIPsForStatus(Status.ERROR, before, new Date()));
-        System.out.println(logParser.getAllUsers());
         System.out.println(logParser.getNumberOfUsers(null, new Date()));
         System.out.println(logParser.getNumberOfUserEvents("Inna", null, after));
         System.out.println(logParser.getUsersForIP("126.34.12.5", null, after));
-        System.out.println(logParser.getLoggedUsers(before, new Date()));
-        System.out.println(logParser.getDownloadedPluginUsers(null, after));
-        System.out.println(logParser.getWroteMessageUsers(before, after));
-        System.out.println(logParser.getSolvedTaskUsers(before, after));
-        System.out.println(logParser.getSolvedTaskUsers(before, after, 17));
-        System.out.println(logParser.getDoneTaskUsers(before, after));
-        System.out.println(logParser.getDoneTaskUsers(null, after, 15));
-        System.out.println(logParser.getDatesForUserAndEvent("Inna", Event.SOLVE_TASK, null, null));
-        System.out.println(logParser.getDatesWhenSomethingFailed(null, null));
-        System.out.println(logParser.getDatesWhenErrorHappened(null, null));
-        System.out.println(logParser.getNumberOfAllEvents(before, after));
-        System.out.println(logParser.getAllEvents(before, after));
-        System.out.println(logParser.getEventsForIP("146.34.15.5", before, after));
-        System.out.println(logParser.getEventsForUser("Amigo", before, after));
-        System.out.println(logParser.getNumberOfAttemptToSolveTask(17, null, after));
-        System.out.println(logParser.getNumberOfSuccessfulAttemptToSolveTask(15, null, after));
-        System.out.println(logParser.getAllSolvedTasksAndTheirNumber(null, after));
-        System.out.println(logParser.getAllDoneTasksAndTheirNumber(null, after));
+
+        System.out.println(logParser.execute("get date"));
     }
 }

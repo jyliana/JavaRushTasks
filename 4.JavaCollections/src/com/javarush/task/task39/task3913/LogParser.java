@@ -1,9 +1,6 @@
 package com.javarush.task.task39.task3913;
 
-import com.javarush.task.task39.task3913.query.DateQuery;
-import com.javarush.task.task39.task3913.query.EventQuery;
-import com.javarush.task.task39.task3913.query.IPQuery;
-import com.javarush.task.task39.task3913.query.UserQuery;
+import com.javarush.task.task39.task3913.query.*;
 
 import java.io.File;
 import java.nio.file.Files;
@@ -13,7 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery {
+public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQuery {
     private List<MyLog> list = new ArrayList<>();
     private Path logDir;
 
@@ -335,5 +332,39 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery {
         return getDataForPeriod(after, before).stream()
                 .filter(log -> log.getEvent().equals(Event.DONE_TASK))
                 .collect(Collectors.groupingBy(MyLog::getTaskNumber, Collectors.summingInt(x -> 1)));
+    }
+
+    @Override
+    public Set<Object> execute(String query) {
+        Set<Object> objects = new HashSet<>();
+
+        switch (query) {
+            case "get ip":
+                objects = list.stream()
+                        .map(log -> log.getIp())
+                        .collect(Collectors.toSet());
+                break;
+            case "get user":
+                objects = list.stream()
+                        .map(log -> log.getUsername())
+                        .collect(Collectors.toSet());
+                break;
+            case "get date":
+                objects = list.stream()
+                        .map(log -> log.getDate())
+                        .collect(Collectors.toSet());
+                break;
+            case "get event":
+                objects = list.stream()
+                        .map(log -> log.getEvent())
+                        .collect(Collectors.toSet());
+                break;
+            case "get status":
+                objects = list.stream()
+                        .map(log -> log.getStatus())
+                        .collect(Collectors.toSet());
+                break;
+        }
+        return objects;
     }
 }
