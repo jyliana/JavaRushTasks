@@ -20,7 +20,7 @@ public class Solution {
         System.out.println(logParser.getNumberOfUserEvents("Inna", null, after));
         System.out.println(logParser.getUsersForIP("126.34.12.5", null, after));*/
 
-        System.out.println(logParser.execute("get ip for event = \"DONE_TASK\""));
-        System.out.println(logParser.execute("get date"));
+        System.out.println(logParser.execute("get date for event = \"DONE_TASK\""));
+        System.out.println(logParser.execute("get event"));
     }
 }

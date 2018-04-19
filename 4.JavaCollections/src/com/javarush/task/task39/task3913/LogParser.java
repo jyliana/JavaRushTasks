@@ -337,49 +337,22 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
 
     @Override
     public Set<Object> execute(String query) {
-        Set<Object> objects = new HashSet<>();
 
         if (query.split(" ").length == 2) {
-            switch (query) {
-                case "get ip":
-                    objects = list.stream()
-                            .map(log -> log.getIp())
-                            .collect(Collectors.toSet());
-                    break;
-                case "get user":
-                    objects = list.stream()
-                            .map(log -> log.getUser())
-                            .collect(Collectors.toSet());
-                    break;
-                case "get date":
-                    objects = list.stream()
-                            .map(log -> log.getDate())
-                            .collect(Collectors.toSet());
-                    break;
-                case "get event":
-                    objects = list.stream()
-                            .map(log -> log.getEvent())
-                            .collect(Collectors.toSet());
-                    break;
-                case "get status":
-                    objects = list.stream()
-                            .map(log -> log.getStatus())
-                            .collect(Collectors.toSet());
-                    break;
-                default:
-                    objects = null;
-            }
+            String oldQueryFormat = query.split(" ")[1];
+            return list.stream()
+                    .map(log -> getField(log, oldQueryFormat))
+                    .collect(Collectors.toSet());
         } else {
             String value1 = query.split("\"")[1];
             String field1 = query.split(" ")[1];
             String field2 = query.split(" ")[3];
 
-            objects = list.stream()
+            return list.stream()
                     .filter(log -> getField(log, field2).equals(convertValue(field2, value1)))
                     .map(log -> getField(log, field1))
                     .collect(Collectors.toSet());
         }
-        return objects;
     }
 
     public Object getField(MyLog log, String string) {
