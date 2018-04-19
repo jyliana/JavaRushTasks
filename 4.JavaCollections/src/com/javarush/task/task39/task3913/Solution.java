@@ -12,14 +12,15 @@ public class Solution {
         Date before = dateFormat.parse("13.09.2013 5:04:50");
         Date after = dateFormat.parse("13.09.2030 5:04:50");
 
-        System.out.println(logParser.getNumberOfUniqueIPs(null, new Date()));
+        /*System.out.println(logParser.getNumberOfUniqueIPs(null, new Date()));
         System.out.println(logParser.getUniqueIPs(null, new Date()));
         System.out.println("Inna " + before + " " + logParser.getIPsForUser("Inna", before, new Date()) + " " + new Date());
         System.out.println(logParser.getIPsForEvent(Event.LOGIN, before, new Date()));
         System.out.println(logParser.getNumberOfUsers(null, new Date()));
         System.out.println(logParser.getNumberOfUserEvents("Inna", null, after));
-        System.out.println(logParser.getUsersForIP("126.34.12.5", null, after));
+        System.out.println(logParser.getUsersForIP("126.34.12.5", null, after));*/
 
+        System.out.println(logParser.execute("get ip for event = \"DONE_TASK\""));
         System.out.println(logParser.execute("get date"));
     }
 }

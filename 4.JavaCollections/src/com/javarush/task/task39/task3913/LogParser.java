@@ -3,6 +3,7 @@ package com.javarush.task.task39.task3913;
 import com.javarush.task.task39.task3913.query.*;
 
 import java.io.File;
+import java.lang.reflect.Field;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.text.ParseException;
@@ -83,7 +84,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
     @Override
     public Set<String> getIPsForUser(String user, Date after, Date before) {
         return getDataForPeriod(after, before).stream()
-                .filter(log -> log.getUsername().equals(user))
+                .filter(log -> log.getUser().equals(user))
                 .map(log -> log.getIp())
                 .collect(Collectors.toSet());
     }
@@ -107,21 +108,21 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
     @Override
     public Set<String> getAllUsers() {
         return list.stream()
-                .map(log -> log.getUsername())
+                .map(log -> log.getUser())
                 .collect(Collectors.toSet());
     }
 
     @Override
     public int getNumberOfUsers(Date after, Date before) {
         return getDataForPeriod(after, before).stream()
-                .map(log -> log.getUsername())
+                .map(log -> log.getUser())
                 .collect(Collectors.toSet()).size();
     }
 
     @Override
     public int getNumberOfUserEvents(String user, Date after, Date before) {
         return getDataForPeriod(after, before).stream()
-                .filter(log -> log.getUsername().equals(user))
+                .filter(log -> log.getUser().equals(user))
                 .map(log -> log.getEvent())
                 .collect(Collectors.toSet()).size();
     }
@@ -130,7 +131,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
     public Set<String> getUsersForIP(String ip, Date after, Date before) {
         return getDataForPeriod(after, before).stream()
                 .filter(log -> log.getIp().equals(ip))
-                .map(log -> log.getUsername())
+                .map(log -> log.getUser())
                 .collect(Collectors.toSet());
     }
 
@@ -138,7 +139,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
     public Set<String> getLoggedUsers(Date after, Date before) {
         return getDataForPeriod(after, before).stream()
                 .filter(log -> log.getEvent().equals(Event.LOGIN))
-                .map(log -> log.getUsername())
+                .map(log -> log.getUser())
                 .collect(Collectors.toSet());
     }
 
@@ -146,7 +147,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
     public Set<String> getDownloadedPluginUsers(Date after, Date before) {
         return getDataForPeriod(after, before).stream()
                 .filter(log -> log.getEvent().equals(Event.DOWNLOAD_PLUGIN))
-                .map(log -> log.getUsername())
+                .map(log -> log.getUser())
                 .collect(Collectors.toSet());
     }
 
@@ -154,7 +155,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
     public Set<String> getWroteMessageUsers(Date after, Date before) {
         return getDataForPeriod(after, before).stream()
                 .filter(log -> log.getEvent().equals(Event.WRITE_MESSAGE))
-                .map(log -> log.getUsername())
+                .map(log -> log.getUser())
                 .collect(Collectors.toSet());
     }
 
@@ -162,7 +163,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
     public Set<String> getSolvedTaskUsers(Date after, Date before) {
         return getDataForPeriod(after, before).stream()
                 .filter(log -> log.getEvent().equals(Event.SOLVE_TASK))
-                .map(log -> log.getUsername())
+                .map(log -> log.getUser())
                 .collect(Collectors.toSet());
     }
 
@@ -170,7 +171,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
     public Set<String> getSolvedTaskUsers(Date after, Date before, int task) {
         return getDataForPeriod(after, before).stream()
                 .filter(log -> log.getEvent().equals(Event.SOLVE_TASK) && log.getTaskNumber() == task)
-                .map(log -> log.getUsername())
+                .map(log -> log.getUser())
                 .collect(Collectors.toSet());
     }
 
@@ -178,7 +179,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
     public Set<String> getDoneTaskUsers(Date after, Date before) {
         return getDataForPeriod(after, before).stream()
                 .filter(log -> log.getEvent().equals(Event.DONE_TASK))
-                .map(log -> log.getUsername())
+                .map(log -> log.getUser())
                 .collect(Collectors.toSet());
     }
 
@@ -186,14 +187,14 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
     public Set<String> getDoneTaskUsers(Date after, Date before, int task) {
         return getDataForPeriod(after, before).stream()
                 .filter(log -> log.getEvent().equals(Event.DONE_TASK) && log.getTaskNumber() == task)
-                .map(log -> log.getUsername())
+                .map(log -> log.getUser())
                 .collect(Collectors.toSet());
     }
 
     @Override
     public Set<Date> getDatesForUserAndEvent(String user, Event event, Date after, Date before) {
         return getDataForPeriod(after, before).stream()
-                .filter(log -> log.getUsername().equals(user) && log.getEvent().equals(event))
+                .filter(log -> log.getUser().equals(user) && log.getEvent().equals(event))
                 .map(log -> log.getDate())
                 .collect(Collectors.toSet());
     }
@@ -225,7 +226,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
     @Override
     public Date getDateWhenUserSolvedTask(String user, int task, Date after, Date before) {
         return getDataForPeriod(after, before).stream()
-                .filter(log -> log.getUsername().equals(user) && log.getEvent().equals(Event.SOLVE_TASK) && log.getTaskNumber() == task)
+                .filter(log -> log.getUser().equals(user) && log.getEvent().equals(Event.SOLVE_TASK) && log.getTaskNumber() == task)
                 .map(log -> log.getDate())
                 .sorted()
                 .findFirst()
@@ -235,7 +236,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
     @Override
     public Date getDateWhenUserDoneTask(String user, int task, Date after, Date before) {
         return getDataForPeriod(after, before).stream()
-                .filter(log -> log.getUsername().equals(user) && log.getEvent().equals(Event.DONE_TASK) && log.getTaskNumber() == task)
+                .filter(log -> log.getUser().equals(user) && log.getEvent().equals(Event.DONE_TASK) && log.getTaskNumber() == task)
                 .map(log -> log.getDate())
                 .sorted()
                 .findFirst()
@@ -245,7 +246,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
     @Override
     public Set<Date> getDatesWhenUserWroteMessage(String user, Date after, Date before) {
         return getDataForPeriod(after, before).stream()
-                .filter(log -> log.getUsername().equals(user) && log.getEvent().equals(Event.WRITE_MESSAGE))
+                .filter(log -> log.getUser().equals(user) && log.getEvent().equals(Event.WRITE_MESSAGE))
                 .map(log -> log.getDate())
                 .collect(Collectors.toSet());
     }
@@ -253,7 +254,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
     @Override
     public Set<Date> getDatesWhenUserDownloadedPlugin(String user, Date after, Date before) {
         return getDataForPeriod(after, before).stream()
-                .filter(log -> log.getUsername().equals(user) && log.getEvent().equals(Event.DOWNLOAD_PLUGIN))
+                .filter(log -> log.getUser().equals(user) && log.getEvent().equals(Event.DOWNLOAD_PLUGIN))
                 .map(log -> log.getDate())
                 .collect(Collectors.toSet());
     }
@@ -283,7 +284,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
     @Override
     public Set<Event> getEventsForUser(String user, Date after, Date before) {
         return getDataForPeriod(after, before).stream()
-                .filter(log -> log.getUsername().equals(user))
+                .filter(log -> log.getUser().equals(user))
                 .map(log -> log.getEvent())
                 .collect(Collectors.toSet());
     }
@@ -338,33 +339,73 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
     public Set<Object> execute(String query) {
         Set<Object> objects = new HashSet<>();
 
-        switch (query) {
-            case "get ip":
-                objects = list.stream()
-                        .map(log -> log.getIp())
-                        .collect(Collectors.toSet());
-                break;
-            case "get user":
-                objects = list.stream()
-                        .map(log -> log.getUsername())
-                        .collect(Collectors.toSet());
-                break;
-            case "get date":
-                objects = list.stream()
-                        .map(log -> log.getDate())
-                        .collect(Collectors.toSet());
-                break;
-            case "get event":
-                objects = list.stream()
-                        .map(log -> log.getEvent())
-                        .collect(Collectors.toSet());
-                break;
-            case "get status":
-                objects = list.stream()
-                        .map(log -> log.getStatus())
-                        .collect(Collectors.toSet());
-                break;
+        if (query.split(" ").length == 2) {
+            switch (query) {
+                case "get ip":
+                    objects = list.stream()
+                            .map(log -> log.getIp())
+                            .collect(Collectors.toSet());
+                    break;
+                case "get user":
+                    objects = list.stream()
+                            .map(log -> log.getUser())
+                            .collect(Collectors.toSet());
+                    break;
+                case "get date":
+                    objects = list.stream()
+                            .map(log -> log.getDate())
+                            .collect(Collectors.toSet());
+                    break;
+                case "get event":
+                    objects = list.stream()
+                            .map(log -> log.getEvent())
+                            .collect(Collectors.toSet());
+                    break;
+                case "get status":
+                    objects = list.stream()
+                            .map(log -> log.getStatus())
+                            .collect(Collectors.toSet());
+                    break;
+                default:
+                    objects = null;
+            }
+        } else {
+            String value1 = query.split("\"")[1];
+            String field1 = query.split(" ")[1];
+            String field2 = query.split(" ")[3];
+
+            objects = list.stream()
+                    .filter(log -> getField(log, field2).equals(convertValue(field2, value1)))
+                    .map(log -> getField(log, field1))
+                    .collect(Collectors.toSet());
         }
         return objects;
+    }
+
+    public Object getField(MyLog log, String string) {
+        Class c = MyLog.class;
+        try {
+            Field field = c.getDeclaredField(string);
+            field.setAccessible(true);
+            return field.get(log);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public Object convertValue(String field, String value) {
+        switch (field) {
+            case "event":
+                return Event.valueOf(value);
+            case "status":
+                return Status.valueOf(value);
+            case "date":
+                try {
+                    return new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").parse(value);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+        }
+        return value;
     }
 }
