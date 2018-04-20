@@ -337,25 +337,32 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
 
     @Override
     public Set<Object> execute(String query) {
+        String[] arraySimple = query.split(" ");
+        String[] arrayQuote = query.split("\"");
 
-        if (query.split(" ").length == 2) {
-            String oldQueryFormat = query.split(" ")[1];
+        if (arraySimple.length == 2) {
+            String oldQueryFormat = arraySimple[1];
             return list.stream()
-                    .map(log -> getField(log, oldQueryFormat))
+                    .map(log -> getReflectedField(log, oldQueryFormat))
                     .collect(Collectors.toSet());
         } else {
-            String value1 = query.split("\"")[1];
-            String field1 = query.split(" ")[1];
-            String field2 = query.split(" ")[3];
+            String value = arrayQuote[1];
+            String field1 = arraySimple[1];
+            String field2 = arraySimple[3];
+
+            final Date after = arrayQuote.length > 4 ? (Date) convertValue("date", arrayQuote[3]) : null;
+            final Date before = arrayQuote.length > 4 ? (Date) convertValue("date", arrayQuote[5]) : null;
 
             return list.stream()
-                    .filter(log -> getField(log, field2).equals(convertValue(field2, value1)))
-                    .map(log -> getField(log, field1))
+                    .filter(log -> log.getDate().getTime() > (after == null ? 0 : after.getTime())
+                            && log.getDate().getTime() < (before == null ? Long.MAX_VALUE : before.getTime()))
+                    .filter(log -> getReflectedField(log, field2).equals(convertValue(field2, value)))
+                    .map(log -> getReflectedField(log, field1))
                     .collect(Collectors.toSet());
         }
     }
 
-    public Object getField(MyLog log, String string) {
+    public Object getReflectedField(MyLog log, String string) {
         Class c = MyLog.class;
         try {
             Field field = c.getDeclaredField(string);

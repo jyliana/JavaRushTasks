@@ -20,7 +20,8 @@ public class Solution {
         System.out.println(logParser.getNumberOfUserEvents("Inna", null, after));
         System.out.println(logParser.getUsersForIP("126.34.12.5", null, after));*/
 
-        System.out.println(logParser.execute("get date for event = \"DONE_TASK\""));
-        System.out.println(logParser.execute("get event"));
+        System.out.println(logParser.execute("get user for date = \"03.01.2014 03:45:23\""));
+        System.out.println(logParser.execute("get date"));
+        System.out.println(logParser.execute("get ip for event = \"WRITE_MESSAGE\" and date between \"11.12.2013 0:00:00\" and \"03.01.2014 23:59:59\"."));
     }
 }
