@@ -1,8 +1,11 @@
 package com.javarush.task.task28.task2810;
 
 import com.javarush.task.task28.task2810.model.Provider;
+import com.javarush.task.task28.task2810.vo.Vacancy;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Controller {
 
@@ -20,5 +23,17 @@ public class Controller {
         return "Controller{" +
                 "providers=" + Arrays.toString(providers) +
                 '}';
+    }
+
+    public void scan() {
+        List<Vacancy> vacancies = new ArrayList<>();
+        try {
+            for (Provider provider : providers) {
+                vacancies.addAll(provider.getJavaVacancies(null));
+            }
+        } catch (NullPointerException e) {
+        }
+
+        System.out.println(vacancies.size());
     }
 }
