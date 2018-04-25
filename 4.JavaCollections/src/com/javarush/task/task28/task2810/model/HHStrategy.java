@@ -13,7 +13,7 @@ public class HHStrategy implements Strategy {
     @Override
     public List<Vacancy> getVacancies(String searchString) {
         try {
-            Document doc = Jsoup.connect(URL_FORMAT).get();
+            Document doc = Jsoup.connect(URL_FORMAT).userAgent("Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36").referrer("no-referrer-when-downgrade").get();
         } catch (IOException e) {
             e.printStackTrace();
         }
