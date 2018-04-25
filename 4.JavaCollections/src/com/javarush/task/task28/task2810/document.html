@@ -1,0 +1,1843 @@
+<!doctype html>
+<html class="layout no-js xs-friendly hh">
+<head>
+    <script>(function(H){
+            H.className=H.className.replace(/\bno-js\b/,'js');
+        })(document.documentElement);
+        window.HH_STATIC_URI = '//i-m.hh.ru/';
+
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Вакансии (мобильная версия)
+    </title>
+    <meta name="description" content="
+    Огромное количество вакансий в вашем мобильном устройстве! Поиск работы, который всегда с вами.
+">
+    <meta name="keywords" content="
+    вакансия,работа,зарплата,Мобильные устройства
+">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="google-site-verification" content="hD0HVmSTnnKqM9TwlR4gwnXpHjT6MKiPnoj2olWhhd8">
+    <link href="//i-m.hh.ru/favicon/hh/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+    <link href="//i-m.hh.ru/favicon/hh/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+    <link href="//i-m.hh.ru/favicon/hh/favicon-64x64.png" rel="icon" sizes="64x64" type="image/png">
+    <link rel="apple-touch-icon" sizes="76x76" href="//i-m.hh.ru/favicon/hh/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="//i-m.hh.ru/favicon/hh/touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="//i-m.hh.ru/favicon/hh/touch-icon-ipad-retina.png">
+    <link rel="canonical" href="https://hh.ua/search/vacancy?text=java+%25s&amp;items_on_page=30">
+    <meta name="msapplication-TileImage" content="//i-m.hh.ru/favicon/hh/touch-icon-ipad-retina.png">
+    <meta name="msapplication-TileColor" content="black">
+    <meta name="apple-mobile-web-app-title" content="HeadHunter">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta http-equiv="cleartype" content="on">
+    <link rel="stylesheet" media="all" charset="utf-8" href="//i-m.hh.ru/build/bundle-bb658256.css">
+    <script>
+    window.globalVars = window.globalVars || {};
+    window.globalVars.version = '1.5.238';
+    window.globalVars.requestId = '1524687680636ad541d59db81e02e34a';
+    window.globalVars.lang = 'RU';
+    window.globalVars.locale = 'ru_UA';
+    window.globalVars.siteId = '2';
+    window.globalVars.staticHost = '//i-m.hh.ru/';
+    // Используется в автотестах для определения когда проинициализировались компоненты на странице
+    window.globalVars.autotestsComponentsInitEnd = false;
+
+        window.globalVars.sentryLogging = true;
+        window.globalVars.sentryDSN = 'https://6debdf9107c64ea4a3bb06e3f63ff4a1@sentry.hh.ru/25';
+
+
+        window.globalVars.bannerParams = {"banner_front_host": "//hhcdn.ru/pv", "qs": "regions=5&token=1524687680.686588976005306&meta=&domainAreaId=125&type=unknown&site=147"};
+
+
+    </script>
+    <script>
+  "use strict";
+
+(function () {
+    var userAgentChecks = {
+        ieMobile: {
+            regex: /iemobile\/(\d+)/,
+            minVersion: 11
+        },
+        ie: {
+            regex: /msie (\d+)\./,
+            minVersion: 10
+        },
+        edge: {
+            regex: /edge\/(\d+)/,
+            minVersion: 12
+        },
+        firefox: {
+            regex: /firefox\/(\d+)\./,
+            minVersion: 40
+        },
+        operaMobile: {
+            regex: /opera\/(\d+).+opera mobi/,
+            minVersion: 12
+        },
+        ios: {
+            regex: /cpu(?: iphone)? os (\d+)_[\d_]+ like mac os x/i,
+            minVersion: 8
+        },
+        android: {
+            regex: /android (\d+\.\d)/,
+            minVersion: 4.1
+        },
+        safari: {
+            regex: /macintosh;.+ version\/(\d+)\.[\d.]+ safari/,
+            minVersion: 9
+        },
+        chrome: {
+            regex: /chrome\/(\d+)\./,
+            minVersion: 44
+        },
+        // Не поддерживаем
+        opera: {
+            regex: /presto\/.+ version\/(\d+)/,
+            minVersion: 999
+        },
+        operaMini: {
+            regex: /opera mini\/(\d+)/,
+            minVersion: 999
+        }
+    };
+
+    function getUserAgentDetails(userAgent) {
+        var agent = userAgent.toLowerCase();
+
+        var result = {
+            isSupported: true,
+            browser: null,
+            version: null
+        };
+
+        for (var name in userAgentChecks) {
+            var match = agent.match(userAgentChecks[name].regex);
+            if (match) {
+                var version = parseFloat(match[1]);
+                if (!isNaN(version)) {
+                    result.browser = name;
+                    result.version = version;
+                    if (version < userAgentChecks[name].minVersion) {
+                        result.isSupported = false;
+                    }
+                    break;
+                }
+            }
+        }
+        return result;
+    }
+
+    window.bloko = window.bloko || {};
+    window.bloko.getUserAgentDetails = getUserAgentDetails;
+})();
+
+    </script>
+    <script src="//i-m.hh.ru/build/bundle-2a14dabd.js" async></script>
+    <!--google-universal-analytics counter-->
+    <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+
+
+        ga('create', 'UA-2554084-1', 'none', 'main');
+        ga('main.require', 'linkid', 'linkid.js');
+        ga('main.require', 'displayfeatures');
+        ga('main.set', 'dimension1', 'anonymous');
+
+
+                    ga('main.set', 'dimension18', 'None');
+        ga('main.send', 'pageview');
+
+        ga('create', 'UA-2554084-12', 'none', 'mobile');
+        ga('mobile.require', 'linkid', 'linkid.js');
+        ga('mobile.require', 'displayfeatures');
+        ga('mobile.set', 'dimension1', 'anonymous');
+
+
+                    ga('mobile.set', 'dimension18', 'None');
+        ga('mobile.send', 'pageview');
+
+
+
+    </script>
+    <!--/google-universal-analytics counter-->
+</head>
+<body class="layout">
+<div class="Bloko-Notification-Manager notification-manager">
+</div>
+<div class="page">
+    <div class="top-bar HH-Header">
+        <button type="button" class="back-button HH-Back">
+            <script data-name="Components/Back" data-params="{}"></script>
+        </button>
+        <div class="menu">
+            <script data-name="Components/Proxies/Bloko/Toggle"
+                    data-params="{&quot;expandClass&quot;: &quot;menu_active&quot;}"></script>
+            <a href="/account/login" class="login-button" data-qa="menu-button"> Войти </a>
+        </div>
+        <a href="/" class="top-bar__logo" data-qa="logo-icon">
+            <div class="logo"></div>
+        </a>
+    </div>
+    <div class="content HH-Content">
+        <div class="HH-Unsupported-Browser important-info important-info_invisible">
+            Ваш браузер устарел и&nbsp;больше не&nbsp;поддерживается. Для корректной работы сайта рекомендуем
+            использовать один из&nbsp;современных браузеров.
+            <a href="/article/176" class="important-info__link"> Узнать&nbsp;подробнее </a>
+        </div>
+        <script>
+    (function() {
+        if (!window.bloko || !window.bloko.getUserAgentDetails) {
+            return
+        }
+        if (!window.bloko.getUserAgentDetails(window.navigator.userAgent).isSupported) {
+            var div = document.querySelector('.HH-Unsupported-Browser');
+            div.classList.remove('important-info_invisible');
+        }
+    })();
+
+        </script>
+        <form class="searchbox">
+            <div class="bloko-control-group">
+                <div class="bloko-control-group__main">
+                    <label class="bloko-input-wrapper"> <input name="text" id="search-text" type="search"
+                                                               class="bloko-input HH-Search-Position"
+                                                               placeholder="Должность, зарплата, ключевые слова"
+                                                               value="java %s" data-qa="search-text">
+                        <script data-name="Components/Proxies/Bloko/Suggest"
+                                data-params="{&quot;remote&quot;: &quot;/autosuggest/v2?d=vacancy&amp;q=%QUERY%&quot;}"
+                                data-for="prev"></script>
+                        <a class="bloko-icon-link" data-qa="extended-search" href="/search?text=java+%25s"> <span
+                                class="bloko-icon
+                                         bloko-icon_filters
+                                         bloko-icon_initial-impact
+                                         bloko-icon_highlighted-action"> </span> </a> </label>
+                </div>
+                <div class="bloko-control-group__minor">
+                    <button class="bloko-button bloko-button_primary bloko-button_icon-only" data-qa="search-button">
+                        <span class="bloko-button__icon"> <span
+                                class="bloko-icon bloko-icon_search bloko-icon_initial-inverted"></span> </span>
+                    </button>
+                </div>
+            </div>
+        </form>
+        <div class="searchbox-more-actions">
+            <div class="searchbox-more-actions__action">
+                <form class="searchbox-autosearch" method="POST" action="/applicant/autosearch/add?text=java+%25s">
+                    <input type="hidden" name="_xsrf" value="1de7669a35596983f198be3343ec3450">
+                    <input type="hidden" name="backurl" value="https://m.hh.ua/vacancies?text=java+%25s&amp;page=%25d"
+                           class="HH-Autosearch-Button-Backurl">
+                    <button type="submit" class="searchbox-autosearch__submit" data-qa="search-add-autosearch">
+                        <script data-name="Components/TrackAnalyticsEvent"
+                                data-params="{&quot;category&quot;: &quot;applicant&quot;, &quot;on&quot;: &quot;click&quot;, &quot;event&quot;: &quot;saved_search&quot;, &quot;label&quot;: &quot;save&quot;}"></script>
+                        <span class="searchbox-more-actions__icon-wrapper"> <span
+                                class="searchbox-more-actions__icon searchbox-more-actions__icon_autosearch"></span> </span>
+                        <span class="searchbox-more-actions__text"> Подписаться </span></button>
+                </form>
+            </div>
+            <a class="searchbox-more-actions__action" href="/clusters?text=java+%25s"> <span
+                    class="searchbox-more-actions__icon-wrapper"> <span
+                    class="searchbox-more-actions__icon searchbox-more-actions__icon_to-clusters"></span> </span> <span
+                    class="searchbox-more-actions__text"> Уточнить </span> </a>
+            <a class="searchbox-more-actions__action" href="/vacancies_nearby?text=java+%25s"> <span
+                    class="searchbox-more-actions__icon-wrapper"> <span
+                    class="searchbox-more-actions__icon searchbox-more-actions__icon_to-map"></span> </span> <span
+                    class="searchbox-more-actions__text"> На карте </span> </a>
+        </div>
+        <div class="searchbox-hint
+            " data-qa="search-hint">
+            <span class="searchbox-hint__number"> 598 </span> вакансий
+        </div>
+        <ul class="vacancy-list" data-qa="search-vacancy-container">
+            <script type="text/html" class="HH-Favorite-Limit-Template">
+                Превышен лимит количества избранных вакансий.
+                <button class="HH-Favorite-Cleanup bloko-notification__link">Удалить самую старую вакансию и добавить
+                    эту
+                </button>
+            </script>
+            <li class="vacancy-short vacancy-short_premium HH-VacancyContacts-Item" id="vacancy_20192172"
+                data-qa="vacancy-item">
+                <div class="favorite-action">
+                    <form method="post" action="/favorite/add?vacancyId=20192172" class="HH-Favorite-Form">
+                        <input type="hidden" name="_xsrf" value="1de7669a35596983f198be3343ec3450">
+                        <input type="hidden" name="backurl"
+                               value="https://m.hh.ua/vacancies?text=java+%25s&amp;page=%25d#vacancy_20192172">
+                        <input type="hidden" name="vacancyId" value="20192172">
+                        <button type="submit" class="favorite-button
+
+
+                           HH-Favorite-Button" data-qa="favorites-add" data-action="add"></button>
+                    </form>
+                </div>
+                <div class="vacancy-short__name" data-qa="vacancy-name">
+                    Java Developer
+                </div>
+                <span class="vacancy-short__city">Минск</span>
+                <div class="vacancy-short__company">
+                    Godel Technologies Europe&nbsp;
+                    <span class="bloko-icon bloko-icon_done bloko-icon_initial-action"></span>
+                </div>
+                <div class="vacancy-short__metros">
+                    <span class="vacancy-short__metro"> <span class="bloko-metro-pin"
+                                                              style="background: #0521C3"></span>Грушевка</span>
+                </div>
+                <div class="vacancy-short__snippet">
+                    <p>Potential business trips on the customer side (UK-based).</p>
+                    <p>Mandatory skills: <span class="highlight">Java</span> and Spring (IoC, MVC, Boot). Good knowledge
+                        of web technologies and Web Services (REST). TDD/BDD testing...</p>
+                </div>
+                <div class="vacancy-short-footer">
+                    <div class="vacancy-short-footer-item">
+                        <div class="vacancy-short__pubdate" data-qa="vacancy-pubdate">
+                            вчера
+                        </div>
+                    </div>
+                    <div class="vacancy-short-footer-item">
+                        <button class="HH-VacancyContacts-Switcher vacancy-short-footer__button-wrapper"
+                                data-qa="vacancy-item-contacts-switcher" data-vacancy-id="20192172"> Контакты
+                        </button>
+                        <a class="vacancy-short-footer__button-wrapper" href="/vacancy_response?vacancy_id=20192172">
+                            Откликнуться </a>
+                    </div>
+                </div>
+                <ul class="HH-VacancyContacts-Container vacancy-short__contacts" data-qa="vacancy-item-contacts">
+                </ul>
+                <a class="vacancy-short__link-overlay" href="https://m.hh.ua/vacancy/20192172"
+                   data-qa="vacancy-link"></a></li>
+            <li class="vacancy-short vacancy-short_premium HH-VacancyContacts-Item" id="vacancy_25098809"
+                data-qa="vacancy-item">
+                <div class="favorite-action">
+                    <form method="post" action="/favorite/add?vacancyId=25098809" class="HH-Favorite-Form">
+                        <input type="hidden" name="_xsrf" value="1de7669a35596983f198be3343ec3450">
+                        <input type="hidden" name="backurl"
+                               value="https://m.hh.ua/vacancies?text=java+%25s&amp;page=%25d#vacancy_25098809">
+                        <input type="hidden" name="vacancyId" value="25098809">
+                        <button type="submit" class="favorite-button
+
+
+                           HH-Favorite-Button" data-qa="favorites-add" data-action="add"></button>
+                    </form>
+                </div>
+                <div class="vacancy-short__name" data-qa="vacancy-name">
+                    Middle Java Engineer
+                </div>
+                <span class="vacancy-short__city">Минск</span>
+                <div class="vacancy-short__company">
+                    WorkFusion&nbsp;
+                    <span class="bloko-icon bloko-icon_done bloko-icon_initial-action"></span>
+                </div>
+                <div class="vacancy-short__metros">
+                    <span class="vacancy-short__metro"> <span class="bloko-metro-pin"
+                                                              style="background: #0521C3"></span>Московская</span>,
+                    <span class="vacancy-short__metro"> <span class="bloko-metro-pin"
+                                                              style="background: #0521C3"></span>Восток</span>
+                </div>
+                <div class="vacancy-short__snippet">
+                    <p>Work in Agile environment and cross-functional teams. Write efficient <span class="highlight">java</span>
+                        code using <span class="highlight">Java</span>, Spring and Hibernate technologies. </p>
+                    <span><span class="highlight">Java</span> knowledge with 2+ years of production experience. Thorough understanding of Computer Science fundamentals. Deep knowledge of <span
+                            class="highlight">Java</span> Core. </span>
+                </div>
+                <div class="vacancy-short-footer">
+                    <div class="vacancy-short-footer-item">
+                        <div class="vacancy-short__pubdate" data-qa="vacancy-pubdate">
+                            вчера
+                        </div>
+                    </div>
+                    <div class="vacancy-short-footer-item">
+                        <a class="vacancy-short-footer__button-wrapper" href="/vacancy_response?vacancy_id=25098809">
+                            Откликнуться </a>
+                    </div>
+                </div>
+                <a class="vacancy-short__link-overlay" href="https://m.hh.ua/vacancy/25098809"
+                   data-qa="vacancy-link"></a></li>
+            <li class="vacancy-short vacancy-short_premium HH-VacancyContacts-Item" id="vacancy_23484984"
+                data-qa="vacancy-item">
+                <div class="favorite-action">
+                    <form method="post" action="/favorite/add?vacancyId=23484984" class="HH-Favorite-Form">
+                        <input type="hidden" name="_xsrf" value="1de7669a35596983f198be3343ec3450">
+                        <input type="hidden" name="backurl"
+                               value="https://m.hh.ua/vacancies?text=java+%25s&amp;page=%25d#vacancy_23484984">
+                        <input type="hidden" name="vacancyId" value="23484984">
+                        <button type="submit" class="favorite-button
+
+
+                           HH-Favorite-Button" data-qa="favorites-add" data-action="add"></button>
+                    </form>
+                </div>
+                <div class="vacancy-short__name" data-qa="vacancy-name">
+                    Middle Java developer (Backend)
+                </div>
+                <span class="vacancy-short__city">Минск</span>
+                <div class="vacancy-short__company">
+                    IBA Group&nbsp;
+                    <span class="bloko-icon bloko-icon_done bloko-icon_initial-action"></span>
+                </div>
+                <div class="vacancy-short__metros">
+                    <span class="vacancy-short__metro"> <span class="bloko-metro-pin"
+                                                              style="background: #0521C3"></span>Уручье</span>
+                </div>
+                <div class="vacancy-short__snippet">
+                    <p>Development of new infrastructure for logistics company (includes CRM, web-services and so on)
+                        using <span class="highlight">Java</span> EE stack (mostly backend...</p>
+                    <p>0,5+ year experience in <span class="highlight">Java</span> EE. Good written, verbal, and
+                        presentation skills in English is a must. </p>
+                </div>
+                <div class="vacancy-short-footer">
+                    <div class="vacancy-short-footer-item">
+                        <div class="vacancy-short__pubdate" data-qa="vacancy-pubdate">
+                            23 апреля
+                        </div>
+                    </div>
+                    <div class="vacancy-short-footer-item">
+                        <button class="HH-VacancyContacts-Switcher vacancy-short-footer__button-wrapper"
+                                data-qa="vacancy-item-contacts-switcher" data-vacancy-id="23484984"> Контакты
+                        </button>
+                        <a class="vacancy-short-footer__button-wrapper" href="/vacancy_response?vacancy_id=23484984">
+                            Откликнуться </a>
+                    </div>
+                </div>
+                <ul class="HH-VacancyContacts-Container vacancy-short__contacts" data-qa="vacancy-item-contacts">
+                </ul>
+                <a class="vacancy-short__link-overlay" href="https://m.hh.ua/vacancy/23484984"
+                   data-qa="vacancy-link"></a></li>
+            <li class="banner-place-wrapper
+
+                     banner-place_vacancy
+                ">
+                <div class="banner-place banner-place_630" data-banner-id="630"></div>
+            </li>
+            <li class="vacancy-short vacancy-short_premium HH-VacancyContacts-Item" id="vacancy_25523542"
+                data-qa="vacancy-item">
+                <div class="favorite-action">
+                    <form method="post" action="/favorite/add?vacancyId=25523542" class="HH-Favorite-Form">
+                        <input type="hidden" name="_xsrf" value="1de7669a35596983f198be3343ec3450">
+                        <input type="hidden" name="backurl"
+                               value="https://m.hh.ua/vacancies?text=java+%25s&amp;page=%25d#vacancy_25523542">
+                        <input type="hidden" name="vacancyId" value="25523542">
+                        <button type="submit" class="favorite-button
+
+
+                           HH-Favorite-Button" data-qa="favorites-add" data-action="add"></button>
+                    </form>
+                </div>
+                <div class="vacancy-short__name" data-qa="vacancy-name">
+                    Senior Java Engineer (RPA)
+                </div>
+                <span class="vacancy-short__city">Минск</span>
+                <div class="vacancy-short__company">
+                    WorkFusion&nbsp;
+                    <span class="bloko-icon bloko-icon_done bloko-icon_initial-action"></span>
+                </div>
+                <div class="vacancy-short__metros">
+                    <span class="vacancy-short__metro"> <span class="bloko-metro-pin"
+                                                              style="background: #0521C3"></span>Московская</span>,
+                    <span class="vacancy-short__metro"> <span class="bloko-metro-pin"
+                                                              style="background: #0521C3"></span>Восток</span>
+                </div>
+                <div class="vacancy-short__snippet">
+                    <p>Develop framework for RPA (Robotic process automation) based on selenium grid, UI automation and
+                        our own tools. Work on statistics...</p>
+                    <p>Expert knowledge of <span class="highlight">Java</span> Core. Deep understanding of testing
+                        techniques and frameworks (e.g. JUnit, mocking frameworks, TDD). </p>
+                </div>
+                <div class="vacancy-short-footer">
+                    <div class="vacancy-short-footer-item">
+                        <div class="vacancy-short__pubdate" data-qa="vacancy-pubdate">
+                            23 апреля
+                        </div>
+                    </div>
+                    <div class="vacancy-short-footer-item">
+                        <a class="vacancy-short-footer__button-wrapper" href="/vacancy_response?vacancy_id=25523542">
+                            Откликнуться </a>
+                    </div>
+                </div>
+                <a class="vacancy-short__link-overlay" href="https://m.hh.ua/vacancy/25523542"
+                   data-qa="vacancy-link"></a></li>
+            <li class="vacancy-short vacancy-short_premium HH-VacancyContacts-Item" id="vacancy_25117482"
+                data-qa="vacancy-item">
+                <div class="favorite-action">
+                    <form method="post" action="/favorite/add?vacancyId=25117482" class="HH-Favorite-Form">
+                        <input type="hidden" name="_xsrf" value="1de7669a35596983f198be3343ec3450">
+                        <input type="hidden" name="backurl"
+                               value="https://m.hh.ua/vacancies?text=java+%25s&amp;page=%25d#vacancy_25117482">
+                        <input type="hidden" name="vacancyId" value="25117482">
+                        <button type="submit" class="favorite-button
+
+
+                           HH-Favorite-Button" data-qa="favorites-add" data-action="add"></button>
+                    </form>
+                </div>
+                <div class="vacancy-short__name" data-qa="vacancy-name">
+                    Full-stack developer (Senior/Middle)
+                </div>
+                <span class="vacancy-short__city">Минск</span>
+                <div class="vacancy-short__company">
+                    ООО Плейджендари Девелопмент&nbsp;
+                    <span class="bloko-icon bloko-icon_done bloko-icon_initial-action"></span>
+                </div>
+                <div class="vacancy-short__snippet">
+                    <p>Проектирование и реализация серверной части для мобильных приложений под операционные системы iOS
+                        и Android. Выбор технологий для реализации высокопроизводительного решения. </p>
+                    <p>Опыт работы с Amazon Web Services (Elastic Beanstalk, <span class="highlight">S</span>3,
+                        ElastiCache, DynamoDB). Опыт работы с Веб-технологиями: HTML5, CSS...</p>
+                </div>
+                <div class="vacancy-short-footer">
+                    <div class="vacancy-short-footer-item">
+                        <div class="vacancy-short__pubdate" data-qa="vacancy-pubdate">
+                            23 апреля
+                        </div>
+                    </div>
+                    <div class="vacancy-short-footer-item">
+                        <a class="vacancy-short-footer__button-wrapper" href="/vacancy_response?vacancy_id=25117482">
+                            Откликнуться </a>
+                    </div>
+                </div>
+                <a class="vacancy-short__link-overlay" href="https://m.hh.ua/vacancy/25117482"
+                   data-qa="vacancy-link"></a></li>
+            <li class="vacancy-short vacancy-short_premium HH-VacancyContacts-Item" id="vacancy_25505373"
+                data-qa="vacancy-item">
+                <div class="favorite-action">
+                    <form method="post" action="/favorite/add?vacancyId=25505373" class="HH-Favorite-Form">
+                        <input type="hidden" name="_xsrf" value="1de7669a35596983f198be3343ec3450">
+                        <input type="hidden" name="backurl"
+                               value="https://m.hh.ua/vacancies?text=java+%25s&amp;page=%25d#vacancy_25505373">
+                        <input type="hidden" name="vacancyId" value="25505373">
+                        <button type="submit" class="favorite-button
+
+
+                           HH-Favorite-Button" data-qa="favorites-add" data-action="add"></button>
+                    </form>
+                </div>
+                <div class="vacancy-short__name" data-qa="vacancy-name">
+                    Senior Android Developer
+                </div>
+                <span class="vacancy-short__salary" data-qa="vacancy-salary">от 100 000<span
+                        class="currency">₽</span></span> <span class="vacancy-short__city">Нижний Новгород</span>
+                <div class="vacancy-short__company">
+                    Messapps&nbsp;
+                    <span class="bloko-icon bloko-icon_done bloko-icon_initial-action"></span>
+                </div>
+                <div class="vacancy-short__snippet">
+                    <p>Development. Development tools optimization. Should be aware of different development tools and
+                        strive to select and optimize the best ones...</p>
+                    <p>...tell it’<span class="highlight">s</span> wrong or that they need to do “this and that”.
+                        Explain why. Be strict. It’<span class="highlight">s</span> important...</p>
+                </div>
+                <div class="vacancy-short-footer">
+                    <div class="vacancy-short-footer-item">
+                        <div class="vacancy-short__pubdate" data-qa="vacancy-pubdate">
+                            21 апреля
+                        </div>
+                    </div>
+                    <div class="vacancy-short-footer-item">
+                        <a class="vacancy-short-footer__button-wrapper" href="/vacancy_response?vacancy_id=25505373">
+                            Откликнуться </a>
+                    </div>
+                </div>
+                <a class="vacancy-short__link-overlay" href="https://m.hh.ua/vacancy/25505373"
+                   data-qa="vacancy-link"></a></li>
+            <li class="vacancy-short vacancy-short_premium HH-VacancyContacts-Item" id="vacancy_24489788"
+                data-qa="vacancy-item">
+                <div class="favorite-action">
+                    <form method="post" action="/favorite/add?vacancyId=24489788" class="HH-Favorite-Form">
+                        <input type="hidden" name="_xsrf" value="1de7669a35596983f198be3343ec3450">
+                        <input type="hidden" name="backurl"
+                               value="https://m.hh.ua/vacancies?text=java+%25s&amp;page=%25d#vacancy_24489788">
+                        <input type="hidden" name="vacancyId" value="24489788">
+                        <button type="submit" class="favorite-button
+
+
+                           HH-Favorite-Button" data-qa="favorites-add" data-action="add"></button>
+                    </form>
+                </div>
+                <div class="vacancy-short__name" data-qa="vacancy-name">
+                    Senior QA Automation Engineer
+                </div>
+                <span class="vacancy-short__city">Минск</span>
+                <div class="vacancy-short__company">
+                    ID Finance&nbsp;
+                    <span class="bloko-icon bloko-icon_done bloko-icon_initial-action"></span>
+                </div>
+                <div class="vacancy-short__metros">
+                    <span class="vacancy-short__metro"> <span class="bloko-metro-pin"
+                                                              style="background: #0521C3"></span>Уручье</span>
+                </div>
+                <div class="vacancy-short__snippet">
+                    <p>Test Automation framework creation, maintenance and improvements. Design, develop and execute
+                        automated tests. Support QA engineers in all activities related...</p>
+                    <p>Experience using industry automation tools such as Selenium. Development skills in <span
+                            class="highlight">Java</span>, Kotlin, Groovy (or similar). Experience with SQL and...</p>
+                </div>
+                <div class="vacancy-short-footer">
+                    <div class="vacancy-short-footer-item">
+                        <div class="vacancy-short__pubdate" data-qa="vacancy-pubdate">
+                            19 апреля
+                        </div>
+                    </div>
+                    <div class="vacancy-short-footer-item">
+                        <a class="vacancy-short-footer__button-wrapper" href="/vacancy_response?vacancy_id=24489788">
+                            Откликнуться </a>
+                    </div>
+                </div>
+                <a class="vacancy-short__link-overlay" href="https://m.hh.ua/vacancy/24489788"
+                   data-qa="vacancy-link"></a></li>
+            <div class="serp-hint serp-hint_address">
+                <script data-name="Components/ClosableBlock"
+                        data-params="{&quot;animation&quot;: &quot;slideUp&quot;, &quot;key&quot;: &quot;serp_hint_address&quot;}"></script>
+                <script data-name="Components/TrackElementVisibility"
+                        data-params="{&quot;category&quot;: &quot;serp_hint&quot;, &quot;event&quot;: &quot;element_visible&quot;, &quot;label&quot;: &quot;address&quot;}"></script>
+                <div class="serp-hint__header">
+                    <div class="serp-hint__title">
+                        Вакансии рядом с&nbsp;домом по&nbsp;вашему запросу
+                    </div>
+                </div>
+                <div class="serp-hint__content">
+                    <script data-name="Components/Maps/AddressFormSerp"
+                            data-params="{&quot;trl&quot;: {&quot;saveHint&quot;: &quot;\u042d\u0442\u043e \u043f\u043e\u043c\u043e\u0436\u0435\u0442 \u043d\u0430\u043c \u043f\u0440\u0435\u0434\u043b\u0430\u0433\u0430\u0442\u044c \u0432\u0430\u043c \u043d\u0430\u0438\u0431\u043e\u043b\u0435\u0435 \u043f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0435 \u0432\u0430\u043a\u0430\u043d\u0441\u0438\u0438. \u0412\u044b \u0432\u0441\u0435\u0433\u0434\u0430 \u043c\u043e\u0436\u0435\u0442\u0435 \u0438\u0437\u043c\u0435\u043d\u0438\u0442\u044c \u0443\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u0430\u0434\u0440\u0435\u0441 \u0432\u00a0\u043b\u0438\u0447\u043d\u043e\u043c \u043a\u0430\u0431\u0438\u043d\u0435\u0442\u0435.&quot;, &quot;submit&quot;: {&quot;askToSaveAddress&quot;: &quot;\u0425\u043e\u0442\u0438\u0442\u0435 \u0441\u043e\u0445\u0440\u0430\u043d\u0438\u0442\u044c \u0443\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u0430\u0434\u0440\u0435\u0441 \u0432 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0435 \u0434\u043e\u043c\u0430\u0448\u043d\u0435\u0433\u043e?\r\n\u042d\u0442\u0430 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f \u043f\u043e\u043c\u043e\u0436\u0435\u0442 \u043d\u0430\u043c \u043f\u0440\u0435\u0434\u043b\u0430\u0433\u0430\u0442\u044c \u0432\u0430\u043c \u043d\u0430\u0438\u0431\u043e\u043b\u0435\u0435 \u043f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0435 \u0432\u0430\u043a\u0430\u043d\u0441\u0438\u0438. \u0412\u044b \u0432\u0441\u0435\u0433\u0434\u0430 \u043c\u043e\u0436\u0435\u0442\u0435 \u0438\u0437\u043c\u0435\u043d\u0438\u0442\u044c \u0443\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u0430\u0434\u0440\u0435\u0441 \u0432 \u043b\u0438\u0447\u043d\u043e\u043c \u043a\u0430\u0431\u0438\u043d\u0435\u0442\u0435.&quot;, &quot;notFound&quot;: &quot;\u041d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e&quot;, &quot;defaultValue&quot;: &quot;\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u044c \u0432\u0430\u043a\u0430\u043d\u0441\u0438\u0438&quot;, &quot;vacancies&quot;: {&quot;many&quot;: &quot; \u0432\u0430\u043a\u0430\u043d\u0441\u0438\u0439&quot;, &quot;some&quot;: &quot; \u0432\u0430\u043a\u0430\u043d\u0441\u0438\u0438&quot;, &quot;one&quot;: &quot; \u0432\u0430\u043a\u0430\u043d\u0441\u0438\u044e&quot;}, &quot;show&quot;: &quot;\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u044c &quot;}}, &quot;addressParams&quot;: {&quot;addressSaveIsEnabled&quot;: false, &quot;currentAddress&quot;: {}}}"></script>
+                    <form class="HH-AddressForm" action="/vacancies">
+                        <input type="hidden" name="text" value="java %s">
+                        <input class="HH-AddressForm-SortPointLat" type="hidden" name="sort_point_lat">
+                        <input class="HH-AddressForm-SortPointLng" type="hidden" name="sort_point_lng">
+                        <input class="HH-AddressForm-TopRightLat" type="hidden" name="top_right_lat">
+                        <input class="HH-AddressForm-TopRightLng" type="hidden" name="top_right_lng">
+                        <input class="HH-AddressForm-BottomLeftLat" type="hidden" name="bottom_left_lat">
+                        <input class="HH-AddressForm-BottomLeftLng" type="hidden" name="bottom_left_lng">
+                        <div class="serp-hint__content-text">
+                        </div>
+                        <div class="address-form__item">
+                            <label class="bloko-input-wrapper HH-AddressForm-Address"> <input
+                                    class="bloko-input Bloko-Address-Input" type="text" name="address"
+                                    placeholder="Введите адрес">
+                                <button type="button" class="bloko-icon-link Bloko-Address-ResolveLocation"><span
+                                        class="bloko-icon bloko-icon_geolocation bloko-icon_initial-unique"></span>
+                                </button>
+                                <span class="bloko-input-wrapper__loading-icon"> <span
+                                        class="bloko-icon bloko-icon_loading bloko-icon_initial-primary"></span> </span>
+                            </label>
+                        </div>
+                        <button class="bloko-button bloko-button_primary bloko-button_stretched HH-AddressForm-Submit"
+                                disabled> Показать вакансии
+                        </button>
+                        <input type="hidden" name="order_by" value="distance">
+                    </form>
+                </div>
+                <div class="serp-hint__footer">
+                    <div class="serp-hint__hide HH-ClosableBlock-Close">
+                        Скрыть подсказку
+                    </div>
+                </div>
+            </div>
+            <li class="vacancy-short vacancy-short_standard_plus HH-VacancyContacts-Item" id="vacancy_25232122"
+                data-qa="vacancy-item">
+                <div class="favorite-action">
+                    <form method="post" action="/favorite/add?vacancyId=25232122" class="HH-Favorite-Form">
+                        <input type="hidden" name="_xsrf" value="1de7669a35596983f198be3343ec3450">
+                        <input type="hidden" name="backurl"
+                               value="https://m.hh.ua/vacancies?text=java+%25s&amp;page=%25d#vacancy_25232122">
+                        <input type="hidden" name="vacancyId" value="25232122">
+                        <button type="submit" class="favorite-button
+
+
+                           HH-Favorite-Button" data-qa="favorites-add" data-action="add"></button>
+                    </form>
+                </div>
+                <div class="vacancy-short__name" data-qa="vacancy-name">
+                    Java Developer Standard/Senior (Dortmund, Dusseldorf)
+                </div>
+                <span class="vacancy-short__salary" data-qa="vacancy-salary">4 000 – 6 400<span
+                        class="currency">€</span></span> <span class="vacancy-short__city">Нижний Новгород</span>
+                <div class="vacancy-short__company">
+                    ACTUM, s.r.o., Actum Digital GmbH&nbsp;
+                    <span class="bloko-icon bloko-icon_done bloko-icon_initial-action"></span>
+                </div>
+                <div class="vacancy-short__snippet">
+                    <p>Migration of the existing system landscape (<span class="highlight">Java</span> EE) into a
+                        microservice architecture based on Spring Boot. Introduction of Continuous Delivery. </p>
+                    <p>Experience in software development in <span class="highlight">Java</span> Enterprise
+                        environments. Extensive programming knowledge in <span class="highlight">Java</span> 8, <span
+                                class="highlight">Java</span> EE and Spring Boot framework. </p>
+                </div>
+                <div class="vacancy-short-footer">
+                    <div class="vacancy-short-footer-item">
+                        <div class="vacancy-short__pubdate" data-qa="vacancy-pubdate">
+                            сегодня
+                        </div>
+                    </div>
+                    <div class="vacancy-short-footer-item">
+                        <button class="HH-VacancyContacts-Switcher vacancy-short-footer__button-wrapper"
+                                data-qa="vacancy-item-contacts-switcher" data-vacancy-id="25232122"> Контакты
+                        </button>
+                        <a class="vacancy-short-footer__button-wrapper" href="/vacancy_response?vacancy_id=25232122">
+                            Откликнуться </a>
+                    </div>
+                </div>
+                <ul class="HH-VacancyContacts-Container vacancy-short__contacts" data-qa="vacancy-item-contacts">
+                </ul>
+                <a class="vacancy-short__link-overlay" href="https://m.hh.ua/vacancy/25232122"
+                   data-qa="vacancy-link"></a></li>
+            <li class="vacancy-short vacancy-short_standard_plus HH-VacancyContacts-Item" id="vacancy_25232123"
+                data-qa="vacancy-item">
+                <div class="favorite-action">
+                    <form method="post" action="/favorite/add?vacancyId=25232123" class="HH-Favorite-Form">
+                        <input type="hidden" name="_xsrf" value="1de7669a35596983f198be3343ec3450">
+                        <input type="hidden" name="backurl"
+                               value="https://m.hh.ua/vacancies?text=java+%25s&amp;page=%25d#vacancy_25232123">
+                        <input type="hidden" name="vacancyId" value="25232123">
+                        <button type="submit" class="favorite-button
+
+
+                           HH-Favorite-Button" data-qa="favorites-add" data-action="add"></button>
+                    </form>
+                </div>
+                <div class="vacancy-short__name" data-qa="vacancy-name">
+                    Java Developer (Standard/Senior), Dortmund/Dusseldorf
+                </div>
+                <span class="vacancy-short__salary" data-qa="vacancy-salary">4 000 – 6 400<span
+                        class="currency">€</span></span> <span class="vacancy-short__city">Новосибирск</span>
+                <div class="vacancy-short__company">
+                    ACTUM, s.r.o., Actum Digital GmbH&nbsp;
+                    <span class="bloko-icon bloko-icon_done bloko-icon_initial-action"></span>
+                </div>
+                <div class="vacancy-short__snippet">
+                    <p>Migration of the existing system landscape (<span class="highlight">Java</span> EE) into a
+                        microservice architecture based on Spring Boot. Introduction of Continuous Delivery. </p>
+                    <p>Experience in software development in <span class="highlight">Java</span> Enterprise
+                        environments. Extensive programming knowledge in <span class="highlight">Java</span> 8, <span
+                                class="highlight">Java</span> EE and Spring Boot framework. </p>
+                </div>
+                <div class="vacancy-short-footer">
+                    <div class="vacancy-short-footer-item">
+                        <div class="vacancy-short__pubdate" data-qa="vacancy-pubdate">
+                            сегодня
+                        </div>
+                    </div>
+                    <div class="vacancy-short-footer-item">
+                        <button class="HH-VacancyContacts-Switcher vacancy-short-footer__button-wrapper"
+                                data-qa="vacancy-item-contacts-switcher" data-vacancy-id="25232123"> Контакты
+                        </button>
+                        <a class="vacancy-short-footer__button-wrapper" href="/vacancy_response?vacancy_id=25232123">
+                            Откликнуться </a>
+                    </div>
+                </div>
+                <ul class="HH-VacancyContacts-Container vacancy-short__contacts" data-qa="vacancy-item-contacts">
+                </ul>
+                <a class="vacancy-short__link-overlay" href="https://m.hh.ua/vacancy/25232123"
+                   data-qa="vacancy-link"></a></li>
+            <li class="vacancy-short vacancy-short_standard_plus HH-VacancyContacts-Item" id="vacancy_25232124"
+                data-qa="vacancy-item">
+                <div class="favorite-action">
+                    <form method="post" action="/favorite/add?vacancyId=25232124" class="HH-Favorite-Form">
+                        <input type="hidden" name="_xsrf" value="1de7669a35596983f198be3343ec3450">
+                        <input type="hidden" name="backurl"
+                               value="https://m.hh.ua/vacancies?text=java+%25s&amp;page=%25d#vacancy_25232124">
+                        <input type="hidden" name="vacancyId" value="25232124">
+                        <button type="submit" class="favorite-button
+
+
+                           HH-Favorite-Button" data-qa="favorites-add" data-action="add"></button>
+                    </form>
+                </div>
+                <div class="vacancy-short__name" data-qa="vacancy-name">
+                    Java Developer (Standard/Senior) - Dortmund/Dusseldorf
+                </div>
+                <span class="vacancy-short__salary" data-qa="vacancy-salary">4 000 – 6 400<span
+                        class="currency">€</span></span> <span class="vacancy-short__city">Екатеринбург</span>
+                <div class="vacancy-short__company">
+                    ACTUM, s.r.o., Actum Digital GmbH&nbsp;
+                    <span class="bloko-icon bloko-icon_done bloko-icon_initial-action"></span>
+                </div>
+                <div class="vacancy-short__snippet">
+                    <p>Migration of the existing system landscape (<span class="highlight">Java</span> EE) into a
+                        microservice architecture based on Spring Boot. Introduction of Continuous Delivery. </p>
+                    <p>Experience in software development in <span class="highlight">Java</span> Enterprise
+                        environments. Extensive programming knowledge in <span class="highlight">Java</span> 8, <span
+                                class="highlight">Java</span> EE and Spring Boot framework. </p>
+                </div>
+                <div class="vacancy-short-footer">
+                    <div class="vacancy-short-footer-item">
+                        <div class="vacancy-short__pubdate" data-qa="vacancy-pubdate">
+                            сегодня
+                        </div>
+                    </div>
+                    <div class="vacancy-short-footer-item">
+                        <button class="HH-VacancyContacts-Switcher vacancy-short-footer__button-wrapper"
+                                data-qa="vacancy-item-contacts-switcher" data-vacancy-id="25232124"> Контакты
+                        </button>
+                        <a class="vacancy-short-footer__button-wrapper" href="/vacancy_response?vacancy_id=25232124">
+                            Откликнуться </a>
+                    </div>
+                </div>
+                <ul class="HH-VacancyContacts-Container vacancy-short__contacts" data-qa="vacancy-item-contacts">
+                </ul>
+                <a class="vacancy-short__link-overlay" href="https://m.hh.ua/vacancy/25232124"
+                   data-qa="vacancy-link"></a></li>
+            <li class="vacancy-short vacancy-short_standard HH-VacancyContacts-Item" id="vacancy_24553397"
+                data-qa="vacancy-item">
+                <div class="favorite-action">
+                    <form method="post" action="/favorite/add?vacancyId=24553397" class="HH-Favorite-Form">
+                        <input type="hidden" name="_xsrf" value="1de7669a35596983f198be3343ec3450">
+                        <input type="hidden" name="backurl"
+                               value="https://m.hh.ua/vacancies?text=java+%25s&amp;page=%25d#vacancy_24553397">
+                        <input type="hidden" name="vacancyId" value="24553397">
+                        <button type="submit" class="favorite-button
+
+
+                           HH-Favorite-Button" data-qa="favorites-add" data-action="add"></button>
+                    </form>
+                </div>
+                <div class="vacancy-short__name" data-qa="vacancy-name">
+                    Senior Java developer (IoT)
+                </div>
+                <span class="vacancy-short__city">Москва</span>
+                <div class="vacancy-short__company">
+                    Kelly Services&nbsp;
+                    <span class="bloko-icon bloko-icon_done bloko-icon_initial-action"></span>
+                </div>
+                <div class="vacancy-short__snippet">
+                    <p>SW architecture development and documentation. Software development. Debugging and root cause
+                        analysis. Managing Code and design reviews. Coordination of work...</p>
+                    <p>5+ years as a <span class="highlight">Java</span> developer. Excellent communication skills
+                        (verbal and written). Experience developing <span class="highlight">Java</span> high performance
+                        multi-threaded...</p>
+                </div>
+                <div class="vacancy-short-footer">
+                    <div class="vacancy-short-footer-item">
+                        <div class="vacancy-short__pubdate" data-qa="vacancy-pubdate">
+                            сегодня
+                        </div>
+                    </div>
+                    <div class="vacancy-short-footer-item">
+                        <a class="vacancy-short-footer__button-wrapper" href="/vacancy_response?vacancy_id=24553397">
+                            Откликнуться </a>
+                    </div>
+                </div>
+                <a class="vacancy-short__link-overlay" href="https://m.hh.ua/vacancy/24553397"
+                   data-qa="vacancy-link"></a></li>
+            <li class="vacancy-short vacancy-short_standard_plus HH-VacancyContacts-Item" id="vacancy_23938653"
+                data-qa="vacancy-item">
+                <div class="favorite-action">
+                    <form method="post" action="/favorite/add?vacancyId=23938653" class="HH-Favorite-Form">
+                        <input type="hidden" name="_xsrf" value="1de7669a35596983f198be3343ec3450">
+                        <input type="hidden" name="backurl"
+                               value="https://m.hh.ua/vacancies?text=java+%25s&amp;page=%25d#vacancy_23938653">
+                        <input type="hidden" name="vacancyId" value="23938653">
+                        <button type="submit" class="favorite-button
+
+
+                           HH-Favorite-Button" data-qa="favorites-add" data-action="add"></button>
+                    </form>
+                </div>
+                <div class="vacancy-short__name" data-qa="vacancy-name">
+                    Java-разработчик /Java Developer
+                </div>
+                <span class="vacancy-short__city">Санкт-Петербург</span>
+                <div class="vacancy-short__company">
+                    DIGINETICA&nbsp;
+                    <span class="bloko-icon bloko-icon_done bloko-icon_initial-action"></span>
+                </div>
+                <div class="vacancy-short__snippet">
+                    <p>Разработка продуктового функционала облачного решения по персонализации пользовательского опыта в
+                        составе интернациональной команды (офисы: San Francisco, Seattle, Malmö, Москва). </p>
+                    <p>Опыт разработки на <span class="highlight">Java</span> 3+ лет. Уверенное знание ООП/Шаблонов
+                        проектирования. Английский устный и письменный. Опыт разработки серверных приложений...</p>
+                </div>
+                <div class="vacancy-short-footer">
+                    <div class="vacancy-short-footer-item">
+                        <div class="vacancy-short__pubdate" data-qa="vacancy-pubdate">
+                            сегодня
+                        </div>
+                    </div>
+                    <div class="vacancy-short-footer-item">
+                        <a class="vacancy-short-footer__button-wrapper" href="/vacancy_response?vacancy_id=23938653">
+                            Откликнуться </a>
+                    </div>
+                </div>
+                <a class="vacancy-short__link-overlay" href="https://m.hh.ua/vacancy/23938653"
+                   data-qa="vacancy-link"></a></li>
+            <li class="banner-place-wrapper
+
+                     banner-place_vacancy
+                ">
+                <div class="banner-place banner-place_505" data-banner-id="505"></div>
+            </li>
+            <li class="vacancy-short vacancy-short_standard HH-VacancyContacts-Item" id="vacancy_25569790"
+                data-qa="vacancy-item">
+                <div class="favorite-action">
+                    <form method="post" action="/favorite/add?vacancyId=25569790" class="HH-Favorite-Form">
+                        <input type="hidden" name="_xsrf" value="1de7669a35596983f198be3343ec3450">
+                        <input type="hidden" name="backurl"
+                               value="https://m.hh.ua/vacancies?text=java+%25s&amp;page=%25d#vacancy_25569790">
+                        <input type="hidden" name="vacancyId" value="25569790">
+                        <button type="submit" class="favorite-button
+
+
+                           HH-Favorite-Button" data-qa="favorites-add" data-action="add"></button>
+                    </form>
+                </div>
+                <div class="vacancy-short__name" data-qa="vacancy-name">
+                    Middle Java Developer (IRC59526)
+                </div>
+                <span class="vacancy-short__city">Киев</span>
+                <div class="vacancy-short__company">
+                    ООО GlobalLogic Ukraine&nbsp;
+                    <span class="bloko-icon bloko-icon_done bloko-icon_initial-action"></span>
+                </div>
+                <div class="vacancy-short__metros">
+                    <span class="vacancy-short__metro"> <span class="bloko-metro-pin"
+                                                              style="background: #069CD3"></span>Олимпийская</span>
+                </div>
+                <div class="vacancy-short__snippet">
+                    <p>Be a creative problem-solver who can draw on an array of expertise and technology to design and
+                        implement reliable...</p>
+                    <p>3+ years production coding experience in server side <span class="highlight">Java</span>.
+                        Expertise in Service-oriented architectures, microservices, advanced database schemas,
+                        relational...</p>
+                </div>
+                <div class="vacancy-short-footer">
+                    <div class="vacancy-short-footer-item">
+                        <div class="vacancy-short__pubdate" data-qa="vacancy-pubdate">
+                            сегодня
+                        </div>
+                    </div>
+                    <div class="vacancy-short-footer-item">
+                        <a class="vacancy-short-footer__button-wrapper" href="/vacancy_response?vacancy_id=25569790">
+                            Откликнуться </a>
+                    </div>
+                </div>
+                <a class="vacancy-short__link-overlay" href="https://m.hh.ua/vacancy/25569790"
+                   data-qa="vacancy-link"></a></li>
+            <li class="vacancy-short vacancy-short_standard_plus HH-VacancyContacts-Item" id="vacancy_25303061"
+                data-qa="vacancy-item">
+                <div class="favorite-action">
+                    <form method="post" action="/favorite/add?vacancyId=25303061" class="HH-Favorite-Form">
+                        <input type="hidden" name="_xsrf" value="1de7669a35596983f198be3343ec3450">
+                        <input type="hidden" name="backurl"
+                               value="https://m.hh.ua/vacancies?text=java+%25s&amp;page=%25d#vacancy_25303061">
+                        <input type="hidden" name="vacancyId" value="25303061">
+                        <button type="submit" class="favorite-button
+
+
+                           HH-Favorite-Button" data-qa="favorites-add" data-action="add"></button>
+                    </form>
+                </div>
+                <div class="vacancy-short__name" data-qa="vacancy-name">
+                    Senior Java Developer
+                </div>
+                <span class="vacancy-short__salary" data-qa="vacancy-salary">4 000 – 4 500<span
+                        class="currency">$</span></span> <span class="vacancy-short__city">Санкт-Петербург</span>
+                <div class="vacancy-short__company">
+                    ООО Mobicy&nbsp;
+                    <span class="bloko-icon bloko-icon_done bloko-icon_initial-action"></span>
+                </div>
+                <div class="vacancy-short__snippet">
+                    <p>JMS and WS for integration with external systems. ● Develop a <span class="highlight">Java</span>-based
+                        Transport Management System for road logistics. ● </p>
+                    <p>You love to create a beautiful design, but you don't forget the K.I.<span
+                            class="highlight">S</span>.<span class="highlight">S</span>. principle. 6. </p>
+                </div>
+                <div class="vacancy-short-footer">
+                    <div class="vacancy-short-footer-item">
+                        <div class="vacancy-short__pubdate" data-qa="vacancy-pubdate">
+                            вчера
+                        </div>
+                    </div>
+                    <div class="vacancy-short-footer-item">
+                        <button class="HH-VacancyContacts-Switcher vacancy-short-footer__button-wrapper"
+                                data-qa="vacancy-item-contacts-switcher" data-vacancy-id="25303061"> Контакты
+                        </button>
+                        <a class="vacancy-short-footer__button-wrapper" href="/vacancy_response?vacancy_id=25303061">
+                            Откликнуться </a>
+                    </div>
+                </div>
+                <ul class="HH-VacancyContacts-Container vacancy-short__contacts" data-qa="vacancy-item-contacts">
+                </ul>
+                <a class="vacancy-short__link-overlay" href="https://m.hh.ua/vacancy/25303061"
+                   data-qa="vacancy-link"></a></li>
+            <li class="vacancy-short vacancy-short_standard_plus HH-VacancyContacts-Item" id="vacancy_25220595"
+                data-qa="vacancy-item">
+                <div class="favorite-action">
+                    <form method="post" action="/favorite/add?vacancyId=25220595" class="HH-Favorite-Form">
+                        <input type="hidden" name="_xsrf" value="1de7669a35596983f198be3343ec3450">
+                        <input type="hidden" name="backurl"
+                               value="https://m.hh.ua/vacancies?text=java+%25s&amp;page=%25d#vacancy_25220595">
+                        <input type="hidden" name="vacancyId" value="25220595">
+                        <button type="submit" class="favorite-button
+
+
+                           HH-Favorite-Button" data-qa="favorites-add" data-action="add"></button>
+                    </form>
+                </div>
+                <div class="vacancy-short__name" data-qa="vacancy-name">
+                    Java Developer (AdServer Team)
+                </div>
+                <span class="vacancy-short__city">Москва</span>
+                <div class="vacancy-short__company">
+                    Getintent&nbsp;
+                    <span class="bloko-icon bloko-icon_done bloko-icon_initial-action"></span>
+                </div>
+                <div class="vacancy-short__metros">
+                    <span class="vacancy-short__metro"> <span class="bloko-metro-pin"
+                                                              style="background: #915133"></span>Курская</span>
+                </div>
+                <div class="vacancy-short__snippet">
+                    <p>Participate in developing of system architecture. Code/functionality documentation. Migration to
+                        microservices. Integration with Elastic. Migration to <span class="highlight">Java</span> 9.
+                    </p>
+                    <p>CQEngine, Aerospike (NoSQL). <span class="highlight">Java</span> Core knowledge and programming
+                        skills. Experience in developing web-based applications (<span class="highlight">Java</span>
+                        Servlet API, HTTPS). <span class="highlight">Java</span>...</p>
+                </div>
+                <div class="vacancy-short-footer">
+                    <div class="vacancy-short-footer-item">
+                        <div class="vacancy-short__pubdate" data-qa="vacancy-pubdate">
+                            вчера
+                        </div>
+                    </div>
+                    <div class="vacancy-short-footer-item">
+                        <a class="vacancy-short-footer__button-wrapper" href="/vacancy_response?vacancy_id=25220595">
+                            Откликнуться </a>
+                    </div>
+                </div>
+                <a class="vacancy-short__link-overlay" href="https://m.hh.ua/vacancy/25220595"
+                   data-qa="vacancy-link"></a></li>
+            <li class="vacancy-short vacancy-short_standard HH-VacancyContacts-Item" id="vacancy_25087942"
+                data-qa="vacancy-item">
+                <div class="favorite-action">
+                    <form method="post" action="/favorite/add?vacancyId=25087942" class="HH-Favorite-Form">
+                        <input type="hidden" name="_xsrf" value="1de7669a35596983f198be3343ec3450">
+                        <input type="hidden" name="backurl"
+                               value="https://m.hh.ua/vacancies?text=java+%25s&amp;page=%25d#vacancy_25087942">
+                        <input type="hidden" name="vacancyId" value="25087942">
+                        <button type="submit" class="favorite-button
+
+
+                           HH-Favorite-Button" data-qa="favorites-add" data-action="add"></button>
+                    </form>
+                </div>
+                <div class="vacancy-short__name" data-qa="vacancy-name">
+                    Senior Java Developer
+                </div>
+                <span class="vacancy-short__city">Минск</span>
+                <div class="vacancy-short__company">
+                    BelITSoft&nbsp;
+                    <span class="bloko-icon bloko-icon_done bloko-icon_initial-action"></span>
+                </div>
+                <div class="vacancy-short__snippet">
+                    <p>Angular 4+; React JS. Competitive "white" salary tightly correlated with real USD exchange rate
+                        and applicant'<span class="highlight">s</span> work results.</p>
+                    <p>1.1 Server frameworks: Spring MVC; Spring Security; Websocket API; Spring Boot; Spring Cloud;
+                        Spring Webflux; JAX-RS; Servlet api...</p>
+                </div>
+                <div class="vacancy-short-footer">
+                    <div class="vacancy-short-footer-item">
+                        <div class="vacancy-short__pubdate" data-qa="vacancy-pubdate">
+                            сегодня
+                        </div>
+                    </div>
+                    <div class="vacancy-short-footer-item">
+                        <a class="vacancy-short-footer__button-wrapper" href="/vacancy_response?vacancy_id=25087942">
+                            Откликнуться </a>
+                    </div>
+                </div>
+                <a class="vacancy-short__link-overlay" href="https://m.hh.ua/vacancy/25087942"
+                   data-qa="vacancy-link"></a></li>
+            <div class="serp-hint serp-hint_clusters">
+                <script data-name="Components/ClosableBlock"
+                        data-params="{&quot;animation&quot;: &quot;slideUp&quot;, &quot;key&quot;: &quot;serp_hint_clusters&quot;}"></script>
+                <script data-name="Components/TrackElementVisibility"
+                        data-params="{&quot;category&quot;: &quot;serp_hint&quot;, &quot;event&quot;: &quot;element_visible&quot;, &quot;label&quot;: &quot;clusters&quot;}"></script>
+                <div class="serp-hint__header">
+                    <div class="serp-hint__subtitle">
+                        Полезные советы
+                    </div>
+                    <div class="serp-hint__title">
+                        Используйте фильтры для&nbsp;поиска вакансий
+                    </div>
+                </div>
+                <div class="serp-hint__content">
+                    <p class="serp-hint__content-text"> Воспользуйтесь фильтрами, чтобы<br> добавить параметры
+                        вакансий<br> и&nbsp;найти самые подходящие </p>
+                    <a href="/clusters?text=java+%25s" class="bloko-button">
+                        <script data-name="Components/TrackAnalyticsEvent"
+                                data-params="{&quot;category&quot;: &quot;applicant&quot;, &quot;on&quot;: &quot;click&quot;, &quot;event&quot;: &quot;went_to_clusters&quot;, &quot;label&quot;: &quot;from_hint&quot;}"></script>
+                        Уточнить запрос </a>
+                </div>
+                <div class="serp-hint__footer">
+                    <div class="serp-hint__hide HH-ClosableBlock-Close">
+                        Скрыть подсказку
+                    </div>
+                </div>
+            </div>
+            <li class="vacancy-short vacancy-short_standard_plus HH-VacancyContacts-Item" id="vacancy_25223360"
+                data-qa="vacancy-item">
+                <div class="favorite-action">
+                    <form method="post" action="/favorite/add?vacancyId=25223360" class="HH-Favorite-Form">
+                        <input type="hidden" name="_xsrf" value="1de7669a35596983f198be3343ec3450">
+                        <input type="hidden" name="backurl"
+                               value="https://m.hh.ua/vacancies?text=java+%25s&amp;page=%25d#vacancy_25223360">
+                        <input type="hidden" name="vacancyId" value="25223360">
+                        <button type="submit" class="favorite-button
+
+
+                           HH-Favorite-Button" data-qa="favorites-add" data-action="add"></button>
+                    </form>
+                </div>
+                <div class="vacancy-short__name" data-qa="vacancy-name">
+                    Senior Java Developer
+                </div>
+                <span class="vacancy-short__city">Санкт-Петербург</span>
+                <div class="vacancy-short__company">
+                    EIS GROUP&nbsp;
+                    <span class="bloko-icon bloko-icon_done bloko-icon_initial-action"></span>
+                </div>
+                <div class="vacancy-short__metros">
+                    <span class="vacancy-short__metro"> <span class="bloko-metro-pin"
+                                                              style="background: #0078C9"></span>Московская</span>
+                </div>
+                <div class="vacancy-short__snippet">
+                    <p>Participates in software development lifecycle by analyzing and implementing business (functional
+                        &amp; non-functional) as well as internal requirements. </p>
+                    <span><span class="highlight">Java</span> Enterprise Edition. Oracle or SQL Server and SQL. Spring framework (IoC, Transactions, Web Services). JSF, JSP basics. </span>
+                </div>
+                <div class="vacancy-short-footer">
+                    <div class="vacancy-short-footer-item">
+                        <div class="vacancy-short__pubdate" data-qa="vacancy-pubdate">
+                            вчера
+                        </div>
+                    </div>
+                    <div class="vacancy-short-footer-item">
+                        <a class="vacancy-short-footer__button-wrapper" href="/vacancy_response?vacancy_id=25223360">
+                            Откликнуться </a>
+                    </div>
+                </div>
+                <a class="vacancy-short__link-overlay" href="https://m.hh.ua/vacancy/25223360"
+                   data-qa="vacancy-link"></a></li>
+            <li class="vacancy-short vacancy-short_standard HH-VacancyContacts-Item" id="vacancy_25545419"
+                data-qa="vacancy-item">
+                <div class="favorite-action">
+                    <form method="post" action="/favorite/add?vacancyId=25545419" class="HH-Favorite-Form">
+                        <input type="hidden" name="_xsrf" value="1de7669a35596983f198be3343ec3450">
+                        <input type="hidden" name="backurl"
+                               value="https://m.hh.ua/vacancies?text=java+%25s&amp;page=%25d#vacancy_25545419">
+                        <input type="hidden" name="vacancyId" value="25545419">
+                        <button type="submit" class="favorite-button
+
+
+                           HH-Favorite-Button" data-qa="favorites-add" data-action="add"></button>
+                    </form>
+                </div>
+                <div class="vacancy-short__name" data-qa="vacancy-name">
+                    Senior Java Developer Kiev
+                </div>
+                <span class="vacancy-short__city">Киев</span>
+                <div class="vacancy-short__company">
+                    Luxoft&nbsp;
+                    <span class="bloko-icon bloko-icon_done bloko-icon_initial-action"></span>
+                </div>
+                <div class="vacancy-short__snippet">
+                    <p>Reference Data Integration Engine project. This project is key client'<span
+                            class="highlight">s</span> internal system for gathering/cleaning/transformation/enrichment
+                        financial data...</p>
+                    <span><span class="highlight">Java</span> 7/8. Groovy. Oracle DWH. Weblogic. Jira / SVN / Maven / Jenkins. Cucumber. Windows / Linux. Skills. - Strong <span
+                            class="highlight">Java</span>: Core, JDBC, multithreading...</span>
+                </div>
+                <div class="vacancy-short-footer">
+                    <div class="vacancy-short-footer-item">
+                        <div class="vacancy-short__pubdate" data-qa="vacancy-pubdate">
+                            вчера
+                        </div>
+                    </div>
+                    <div class="vacancy-short-footer-item">
+                        <a class="vacancy-short-footer__button-wrapper" href="/vacancy_response?vacancy_id=25545419">
+                            Откликнуться </a>
+                    </div>
+                </div>
+                <a class="vacancy-short__link-overlay" href="https://m.hh.ua/vacancy/25545419"
+                   data-qa="vacancy-link"></a></li>
+            <li class="vacancy-short vacancy-short_standard HH-VacancyContacts-Item" id="vacancy_24147113"
+                data-qa="vacancy-item">
+                <div class="favorite-action">
+                    <form method="post" action="/favorite/add?vacancyId=24147113" class="HH-Favorite-Form">
+                        <input type="hidden" name="_xsrf" value="1de7669a35596983f198be3343ec3450">
+                        <input type="hidden" name="backurl"
+                               value="https://m.hh.ua/vacancies?text=java+%25s&amp;page=%25d#vacancy_24147113">
+                        <input type="hidden" name="vacancyId" value="24147113">
+                        <button type="submit" class="favorite-button
+
+
+                           HH-Favorite-Button" data-qa="favorites-add" data-action="add"></button>
+                    </form>
+                </div>
+                <div class="vacancy-short__name" data-qa="vacancy-name">
+                    Java Developer (middle/senior)
+                </div>
+                <span class="vacancy-short__city">Санкт-Петербург</span>
+                <div class="vacancy-short__company">
+                    Петрович, Строительный Торговый Дом&nbsp;
+                    <span class="bloko-icon bloko-icon_done bloko-icon_initial-action"></span>
+                </div>
+                <div class="vacancy-short__metros">
+                    <span class="vacancy-short__metro"> <span class="bloko-metro-pin"
+                                                              style="background: #0078C9"></span>Парнас</span>
+                </div>
+                <div class="vacancy-short__snippet">
+                    <p>Ставить задачи и контролировать их выполнение. Участвуете в организации процесса разработки.</p>
+                    <p>Отличные знания спецификации <span class="highlight">Java</span> EE, <span
+                            class="highlight">Java</span> Core, <span class="highlight">Java</span> Concurrency, <span
+                            class="highlight">Java</span> Collection. Опыт работы с SpringMVC, Spring Boot, Spring Data,
+                        Spring...</p>
+                </div>
+                <div class="vacancy-short-footer">
+                    <div class="vacancy-short-footer-item">
+                        <div class="vacancy-short__pubdate" data-qa="vacancy-pubdate">
+                            вчера
+                        </div>
+                    </div>
+                    <div class="vacancy-short-footer-item">
+                        <a class="vacancy-short-footer__button-wrapper" href="/vacancy_response?vacancy_id=24147113">
+                            Откликнуться </a>
+                    </div>
+                </div>
+                <a class="vacancy-short__link-overlay" href="https://m.hh.ua/vacancy/24147113"
+                   data-qa="vacancy-link"></a></li>
+            <li class="vacancy-short vacancy-short_standard HH-VacancyContacts-Item" id="vacancy_21591190"
+                data-qa="vacancy-item">
+                <div class="favorite-action">
+                    <form method="post" action="/favorite/add?vacancyId=21591190" class="HH-Favorite-Form">
+                        <input type="hidden" name="_xsrf" value="1de7669a35596983f198be3343ec3450">
+                        <input type="hidden" name="backurl"
+                               value="https://m.hh.ua/vacancies?text=java+%25s&amp;page=%25d#vacancy_21591190">
+                        <input type="hidden" name="vacancyId" value="21591190">
+                        <button type="submit" class="favorite-button
+
+
+                           HH-Favorite-Button" data-qa="favorites-add" data-action="add"></button>
+                    </form>
+                </div>
+                <div class="vacancy-short__name" data-qa="vacancy-name">
+                    Java Developer
+                </div>
+                <span class="vacancy-short__city">Санкт-Петербург</span>
+                <div class="vacancy-short__company">
+                    Wrike&nbsp;
+                    <span class="bloko-icon bloko-icon_done bloko-icon_initial-action"></span>
+                </div>
+                <div class="vacancy-short__metros">
+                    <span class="vacancy-short__metro"> <span class="bloko-metro-pin"
+                                                              style="background: #D6083B"></span>Площадь Ленина</span>
+                </div>
+                <div class="vacancy-short-footer">
+                    <div class="vacancy-short-footer-item">
+                        <div class="vacancy-short__pubdate" data-qa="vacancy-pubdate">
+                            вчера
+                        </div>
+                    </div>
+                    <div class="vacancy-short-footer-item">
+                        <a class="vacancy-short-footer__button-wrapper" href="/vacancy_response?vacancy_id=21591190">
+                            Откликнуться </a>
+                    </div>
+                </div>
+                <a class="vacancy-short__link-overlay" href="https://m.hh.ua/vacancy/21591190"
+                   data-qa="vacancy-link"></a></li>
+            <li class="vacancy-short vacancy-short_standard_plus HH-VacancyContacts-Item" id="vacancy_24482025"
+                data-qa="vacancy-item">
+                <div class="favorite-action">
+                    <form method="post" action="/favorite/add?vacancyId=24482025" class="HH-Favorite-Form">
+                        <input type="hidden" name="_xsrf" value="1de7669a35596983f198be3343ec3450">
+                        <input type="hidden" name="backurl"
+                               value="https://m.hh.ua/vacancies?text=java+%25s&amp;page=%25d#vacancy_24482025">
+                        <input type="hidden" name="vacancyId" value="24482025">
+                        <button type="submit" class="favorite-button
+
+
+                           HH-Favorite-Button" data-qa="favorites-add" data-action="add"></button>
+                    </form>
+                </div>
+                <div class="vacancy-short__name" data-qa="vacancy-name">
+                    Senior Java EE Developer, DPA
+                </div>
+                <span class="vacancy-short__city">Санкт-Петербург</span>
+                <div class="vacancy-short__company">
+                    Dell EMC&nbsp;
+                    <span class="bloko-icon bloko-icon_done bloko-icon_initial-action"></span>
+                </div>
+                <div class="vacancy-short__metros">
+                    <span class="vacancy-short__metro"> <span class="bloko-metro-pin"
+                                                              style="background: #009A49"></span>Василеостровская</span>
+                </div>
+                <div class="vacancy-short__snippet">
+                    <p>Provides technical expertise by independently determining and developing approaches to solutions
+                        for a moderate range of complex software engineering problems. </p>
+                    <p>Total of 3+ years of software development experience using <span class="highlight">Java</span>
+                        technologies. Strong <span class="highlight">Java</span> EE skills and knowledge of
+                        respective...</p>
+                </div>
+                <div class="vacancy-short-footer">
+                    <div class="vacancy-short-footer-item">
+                        <div class="vacancy-short__pubdate" data-qa="vacancy-pubdate">
+                            вчера
+                        </div>
+                    </div>
+                    <div class="vacancy-short-footer-item">
+                        <a class="vacancy-short-footer__button-wrapper" href="/vacancy_response?vacancy_id=24482025">
+                            Откликнуться </a>
+                    </div>
+                </div>
+                <a class="vacancy-short__link-overlay" href="https://m.hh.ua/vacancy/24482025"
+                   data-qa="vacancy-link"></a></li>
+            <li class="banner-place-wrapper
+
+                     banner-place_vacancy
+                ">
+                <div class="banner-place banner-place_333" data-banner-id="333"></div>
+            </li>
+            <li class="vacancy-short vacancy-short_standard_plus HH-VacancyContacts-Item" id="vacancy_25223373"
+                data-qa="vacancy-item">
+                <div class="favorite-action">
+                    <form method="post" action="/favorite/add?vacancyId=25223373" class="HH-Favorite-Form">
+                        <input type="hidden" name="_xsrf" value="1de7669a35596983f198be3343ec3450">
+                        <input type="hidden" name="backurl"
+                               value="https://m.hh.ua/vacancies?text=java+%25s&amp;page=%25d#vacancy_25223373">
+                        <input type="hidden" name="vacancyId" value="25223373">
+                        <button type="submit" class="favorite-button
+
+
+                           HH-Favorite-Button" data-qa="favorites-add" data-action="add"></button>
+                    </form>
+                </div>
+                <div class="vacancy-short__name" data-qa="vacancy-name">
+                    Java Architect
+                </div>
+                <span class="vacancy-short__city">Санкт-Петербург</span>
+                <div class="vacancy-short__company">
+                    EIS GROUP&nbsp;
+                    <span class="bloko-icon bloko-icon_done bloko-icon_initial-action"></span>
+                </div>
+                <div class="vacancy-short__metros">
+                    <span class="vacancy-short__metro"> <span class="bloko-metro-pin"
+                                                              style="background: #0078C9"></span>Московская</span>
+                </div>
+                <div class="vacancy-short__snippet">
+                    <p>The Software Architect drives innovation and brings new ideas into EIS Group’<span
+                            class="highlight">s</span> digital insurance technology software products. </p>
+                    <span><span class="highlight">Java</span> Enterprise Edition. Oracle or SQL Server and SQL. Spring framework (IoC, Transactions, Web Services). JSF, JSP basics. </span>
+                </div>
+                <div class="vacancy-short-footer">
+                    <div class="vacancy-short-footer-item">
+                        <div class="vacancy-short__pubdate" data-qa="vacancy-pubdate">
+                            вчера
+                        </div>
+                    </div>
+                    <div class="vacancy-short-footer-item">
+                        <a class="vacancy-short-footer__button-wrapper" href="/vacancy_response?vacancy_id=25223373">
+                            Откликнуться </a>
+                    </div>
+                </div>
+                <a class="vacancy-short__link-overlay" href="https://m.hh.ua/vacancy/25223373"
+                   data-qa="vacancy-link"></a></li>
+            <li class="vacancy-short vacancy-short_standard_plus HH-VacancyContacts-Item" id="vacancy_25528412"
+                data-qa="vacancy-item">
+                <div class="favorite-action">
+                    <form method="post" action="/favorite/add?vacancyId=25528412" class="HH-Favorite-Form">
+                        <input type="hidden" name="_xsrf" value="1de7669a35596983f198be3343ec3450">
+                        <input type="hidden" name="backurl"
+                               value="https://m.hh.ua/vacancies?text=java+%25s&amp;page=%25d#vacancy_25528412">
+                        <input type="hidden" name="vacancyId" value="25528412">
+                        <button type="submit" class="favorite-button
+
+
+                           HH-Favorite-Button" data-qa="favorites-add" data-action="add"></button>
+                    </form>
+                </div>
+                <div class="vacancy-short__name" data-qa="vacancy-name">
+                    Java Developer Standard/Senior (Dortmund, Germany)
+                </div>
+                <span class="vacancy-short__salary" data-qa="vacancy-salary">4 000 – 6 400<span
+                        class="currency">€</span></span> <span class="vacancy-short__city">Санкт-Петербург</span>
+                <div class="vacancy-short__company">
+                    ACTUM, s.r.o., Actum Digital GmbH&nbsp;
+                    <span class="bloko-icon bloko-icon_done bloko-icon_initial-action"></span>
+                </div>
+                <div class="vacancy-short__snippet">
+                    <p>Migration of the existing system landscape (<span class="highlight">Java</span> EE) into a
+                        microservice architecture based on Spring Boot. Introduction of Continuous Delivery. </p>
+                    <p>Experience in software development in <span class="highlight">Java</span> Enterprise
+                        environments. Extensive programming knowledge in <span class="highlight">Java</span> 8, <span
+                                class="highlight">Java</span> EE and Spring Boot framework. </p>
+                </div>
+                <div class="vacancy-short-footer">
+                    <div class="vacancy-short-footer-item">
+                        <div class="vacancy-short__pubdate" data-qa="vacancy-pubdate">
+                            23 апреля
+                        </div>
+                    </div>
+                    <div class="vacancy-short-footer-item">
+                        <button class="HH-VacancyContacts-Switcher vacancy-short-footer__button-wrapper"
+                                data-qa="vacancy-item-contacts-switcher" data-vacancy-id="25528412"> Контакты
+                        </button>
+                        <a class="vacancy-short-footer__button-wrapper" href="/vacancy_response?vacancy_id=25528412">
+                            Откликнуться </a>
+                    </div>
+                </div>
+                <ul class="HH-VacancyContacts-Container vacancy-short__contacts" data-qa="vacancy-item-contacts">
+                </ul>
+                <a class="vacancy-short__link-overlay" href="https://m.hh.ua/vacancy/25528412"
+                   data-qa="vacancy-link"></a></li>
+            <li class="vacancy-short vacancy-short_standard_plus HH-VacancyContacts-Item" id="vacancy_25528413"
+                data-qa="vacancy-item">
+                <div class="favorite-action">
+                    <form method="post" action="/favorite/add?vacancyId=25528413" class="HH-Favorite-Form">
+                        <input type="hidden" name="_xsrf" value="1de7669a35596983f198be3343ec3450">
+                        <input type="hidden" name="backurl"
+                               value="https://m.hh.ua/vacancies?text=java+%25s&amp;page=%25d#vacancy_25528413">
+                        <input type="hidden" name="vacancyId" value="25528413">
+                        <button type="submit" class="favorite-button
+
+
+                           HH-Favorite-Button" data-qa="favorites-add" data-action="add"></button>
+                    </form>
+                </div>
+                <div class="vacancy-short__name" data-qa="vacancy-name">
+                    Java Developer Standard/Senior (Dortmund, Germany)
+                </div>
+                <span class="vacancy-short__salary" data-qa="vacancy-salary">4 000 – 6 400<span
+                        class="currency">€</span></span> <span class="vacancy-short__city">Астана</span>
+                <div class="vacancy-short__company">
+                    ACTUM, s.r.o., Actum Digital GmbH&nbsp;
+                    <span class="bloko-icon bloko-icon_done bloko-icon_initial-action"></span>
+                </div>
+                <div class="vacancy-short__snippet">
+                    <p>Migration of the existing system landscape (<span class="highlight">Java</span> EE) into a
+                        microservice architecture based on Spring Boot. Introduction of Continuous Delivery. </p>
+                    <p>Experience in software development in <span class="highlight">Java</span> Enterprise
+                        environments. Extensive programming knowledge in <span class="highlight">Java</span> 8, <span
+                                class="highlight">Java</span> EE and Spring Boot framework. </p>
+                </div>
+                <div class="vacancy-short-footer">
+                    <div class="vacancy-short-footer-item">
+                        <div class="vacancy-short__pubdate" data-qa="vacancy-pubdate">
+                            23 апреля
+                        </div>
+                    </div>
+                    <div class="vacancy-short-footer-item">
+                        <button class="HH-VacancyContacts-Switcher vacancy-short-footer__button-wrapper"
+                                data-qa="vacancy-item-contacts-switcher" data-vacancy-id="25528413"> Контакты
+                        </button>
+                        <a class="vacancy-short-footer__button-wrapper" href="/vacancy_response?vacancy_id=25528413">
+                            Откликнуться </a>
+                    </div>
+                </div>
+                <ul class="HH-VacancyContacts-Container vacancy-short__contacts" data-qa="vacancy-item-contacts">
+                </ul>
+                <a class="vacancy-short__link-overlay" href="https://m.hh.ua/vacancy/25528413"
+                   data-qa="vacancy-link"></a></li>
+            <li class="vacancy-short vacancy-short_standard HH-VacancyContacts-Item" id="vacancy_25542595"
+                data-qa="vacancy-item">
+                <div class="favorite-action">
+                    <form method="post" action="/favorite/add?vacancyId=25542595" class="HH-Favorite-Form">
+                        <input type="hidden" name="_xsrf" value="1de7669a35596983f198be3343ec3450">
+                        <input type="hidden" name="backurl"
+                               value="https://m.hh.ua/vacancies?text=java+%25s&amp;page=%25d#vacancy_25542595">
+                        <input type="hidden" name="vacancyId" value="25542595">
+                        <button type="submit" class="favorite-button
+
+
+                           HH-Favorite-Button" data-qa="favorites-add" data-action="add"></button>
+                    </form>
+                </div>
+                <div class="vacancy-short__name" data-qa="vacancy-name">
+                    Middle Java Developer
+                </div>
+                <span class="vacancy-short__city">Киев</span>
+                <div class="vacancy-short__company">
+                    Luxoft&nbsp;
+                    <span class="bloko-icon bloko-icon_done bloko-icon_initial-action"></span>
+                </div>
+                <div class="vacancy-short__snippet">
+                    <p>The project sought to implement a comprehensive, bank-wide governance framework which would
+                        ensure clear mandates, transparent and fully aligned...</p>
+                    <p>Skills: - <span class="highlight">Java</span>. - Spring. - Hibernate. - OSGi. - GWT. - HTML +
+                        CSS. - Oracle. - English Intermediate+.</p>
+                </div>
+                <div class="vacancy-short-footer">
+                    <div class="vacancy-short-footer-item">
+                        <div class="vacancy-short__pubdate" data-qa="vacancy-pubdate">
+                            вчера
+                        </div>
+                    </div>
+                    <div class="vacancy-short-footer-item">
+                        <a class="vacancy-short-footer__button-wrapper" href="/vacancy_response?vacancy_id=25542595">
+                            Откликнуться </a>
+                    </div>
+                </div>
+                <a class="vacancy-short__link-overlay" href="https://m.hh.ua/vacancy/25542595"
+                   data-qa="vacancy-link"></a></li>
+            <li class="vacancy-short vacancy-short_standard HH-VacancyContacts-Item" id="vacancy_25551471"
+                data-qa="vacancy-item">
+                <div class="favorite-action">
+                    <form method="post" action="/favorite/add?vacancyId=25551471" class="HH-Favorite-Form">
+                        <input type="hidden" name="_xsrf" value="1de7669a35596983f198be3343ec3450">
+                        <input type="hidden" name="backurl"
+                               value="https://m.hh.ua/vacancies?text=java+%25s&amp;page=%25d#vacancy_25551471">
+                        <input type="hidden" name="vacancyId" value="25551471">
+                        <button type="submit" class="favorite-button
+
+
+                           HH-Favorite-Button" data-qa="favorites-add" data-action="add"></button>
+                    </form>
+                </div>
+                <div class="vacancy-short__name" data-qa="vacancy-name">
+                    Senior Java Developer\Tech Lead
+                </div>
+                <span class="vacancy-short__city">Киев</span>
+                <div class="vacancy-short__company">
+                    Luxoft&nbsp;
+                    <span class="bloko-icon bloko-icon_done bloko-icon_initial-action"></span>
+                </div>
+                <div class="vacancy-short__snippet">
+                    <p>Our Customer is among the world'<span class="highlight">s</span> leading creators and
+                        distributors of award-winning still imagery, video and multimedia products...</p>
+                    <p>...work experience with <span class="highlight">Java</span>. 2+ years' experience writing
+                        multi-threaded and/or distributed applications using <span class="highlight">Java</span>.
+                        Experience with JS...</p>
+                </div>
+                <div class="vacancy-short-footer">
+                    <div class="vacancy-short-footer-item">
+                        <div class="vacancy-short__pubdate" data-qa="vacancy-pubdate">
+                            вчера
+                        </div>
+                    </div>
+                    <div class="vacancy-short-footer-item">
+                        <button class="HH-VacancyContacts-Switcher vacancy-short-footer__button-wrapper"
+                                data-qa="vacancy-item-contacts-switcher" data-vacancy-id="25551471"> Контакты
+                        </button>
+                        <a class="vacancy-short-footer__button-wrapper" href="/vacancy_response?vacancy_id=25551471">
+                            Откликнуться </a>
+                    </div>
+                </div>
+                <ul class="HH-VacancyContacts-Container vacancy-short__contacts" data-qa="vacancy-item-contacts">
+                </ul>
+                <a class="vacancy-short__link-overlay" href="https://m.hh.ua/vacancy/25551471"
+                   data-qa="vacancy-link"></a></li>
+            <li class="vacancy-short vacancy-short_standard_plus HH-VacancyContacts-Item" id="vacancy_25293891"
+                data-qa="vacancy-item">
+                <div class="favorite-action">
+                    <form method="post" action="/favorite/add?vacancyId=25293891" class="HH-Favorite-Form">
+                        <input type="hidden" name="_xsrf" value="1de7669a35596983f198be3343ec3450">
+                        <input type="hidden" name="backurl"
+                               value="https://m.hh.ua/vacancies?text=java+%25s&amp;page=%25d#vacancy_25293891">
+                        <input type="hidden" name="vacancyId" value="25293891">
+                        <button type="submit" class="favorite-button
+
+
+                           HH-Favorite-Button" data-qa="favorites-add" data-action="add"></button>
+                    </form>
+                </div>
+                <div class="vacancy-short__name" data-qa="vacancy-name">
+                    Android-разработчик (Java)
+                </div>
+                <span class="vacancy-short__salary" data-qa="vacancy-salary">от 80 000<span
+                        class="currency">₽</span></span> <span class="vacancy-short__city">Пенза</span>
+                <div class="vacancy-short__company">
+                    ООО Хедс анд Хендс&nbsp;
+                    <span class="bloko-icon bloko-icon_done bloko-icon_initial-action"></span>
+                </div>
+                <div class="vacancy-short__snippet">
+                    <p>Уметь оценивать задачи по времени и сложности и соблюдать сроки по ним.</p>
+                    <p>Понимать что такое и как работает HTTP(<span class="highlight">S</span>), REST. Умение
+                        проектировать и работать с БД (SQLite). Знание основных концепциях Android...</p>
+                </div>
+                <div class="vacancy-short-footer">
+                    <div class="vacancy-short-footer-item">
+                        <div class="vacancy-short__pubdate" data-qa="vacancy-pubdate">
+                            вчера
+                        </div>
+                    </div>
+                    <div class="vacancy-short-footer-item">
+                        <a class="vacancy-short-footer__button-wrapper" href="/vacancy_response?vacancy_id=25293891">
+                            Откликнуться </a>
+                    </div>
+                </div>
+                <a class="vacancy-short__link-overlay" href="https://m.hh.ua/vacancy/25293891"
+                   data-qa="vacancy-link"></a></li>
+            <li class="vacancy-short vacancy-short_standard HH-VacancyContacts-Item" id="vacancy_25529031"
+                data-qa="vacancy-item">
+                <div class="favorite-action">
+                    <form method="post" action="/favorite/add?vacancyId=25529031" class="HH-Favorite-Form">
+                        <input type="hidden" name="_xsrf" value="1de7669a35596983f198be3343ec3450">
+                        <input type="hidden" name="backurl"
+                               value="https://m.hh.ua/vacancies?text=java+%25s&amp;page=%25d#vacancy_25529031">
+                        <input type="hidden" name="vacancyId" value="25529031">
+                        <button type="submit" class="favorite-button
+
+
+                           HH-Favorite-Button" data-qa="favorites-add" data-action="add"></button>
+                    </form>
+                </div>
+                <div class="vacancy-short__name" data-qa="vacancy-name">
+                    Full Stack Java Developer
+                </div>
+                <span class="vacancy-short__city">Воронеж</span>
+                <div class="vacancy-short__company">
+                    Атос АйТи Солюшенс энд Сервисез&nbsp;
+                    <span class="bloko-icon bloko-icon_done bloko-icon_initial-action"></span>
+                </div>
+                <div class="vacancy-short__snippet">
+                    <p>Web application design and development. Implementation and testing procedures, modules and
+                        related code using best practices. Supporting, updating and enhancing...</p>
+                    <p>Experience in <span class="highlight">Java</span> application development, which includes the
+                        following: Server-side <span class="highlight">Java</span> programming. <span class="highlight">Java</span>
+                        Server Faces 2.x, Primefaces. </p>
+                </div>
+                <div class="vacancy-short-footer">
+                    <div class="vacancy-short-footer-item">
+                        <div class="vacancy-short__pubdate" data-qa="vacancy-pubdate">
+                            23 апреля
+                        </div>
+                    </div>
+                    <div class="vacancy-short-footer-item">
+                        <a class="vacancy-short-footer__button-wrapper" href="/vacancy_response?vacancy_id=25529031">
+                            Откликнуться </a>
+                    </div>
+                </div>
+                <a class="vacancy-short__link-overlay" href="https://m.hh.ua/vacancy/25529031"
+                   data-qa="vacancy-link"></a></li>
+            <li class="vacancy-short vacancy-short_standard HH-VacancyContacts-Item" id="vacancy_25528947"
+                data-qa="vacancy-item">
+                <div class="favorite-action">
+                    <form method="post" action="/favorite/add?vacancyId=25528947" class="HH-Favorite-Form">
+                        <input type="hidden" name="_xsrf" value="1de7669a35596983f198be3343ec3450">
+                        <input type="hidden" name="backurl"
+                               value="https://m.hh.ua/vacancies?text=java+%25s&amp;page=%25d#vacancy_25528947">
+                        <input type="hidden" name="vacancyId" value="25528947">
+                        <button type="submit" class="favorite-button
+
+
+                           HH-Favorite-Button" data-qa="favorites-add" data-action="add"></button>
+                    </form>
+                </div>
+                <div class="vacancy-short__name" data-qa="vacancy-name">
+                    Java Developer
+                </div>
+                <span class="vacancy-short__city">Минск</span>
+                <div class="vacancy-short__company">
+                    Oxagile&nbsp;
+                    <span class="bloko-icon bloko-icon_done bloko-icon_initial-action"></span>
+                </div>
+                <div class="vacancy-short__snippet">
+                    <p>Implement Subtasks according to the requirements and company code guidlines. Follow the
+                        company'<span class="highlight">s</span> Git flow. Perform code review. </p>
+                    <p>1+ years in <span class="highlight">Java</span>/J2EE technologies. English( upper-intermediate),
+                        both written as verbal, is the must. </p>
+                </div>
+                <div class="vacancy-short-footer">
+                    <div class="vacancy-short-footer-item">
+                        <div class="vacancy-short__pubdate" data-qa="vacancy-pubdate">
+                            23 апреля
+                        </div>
+                    </div>
+                    <div class="vacancy-short-footer-item">
+                        <a class="vacancy-short-footer__button-wrapper" href="/vacancy_response?vacancy_id=25528947">
+                            Откликнуться </a>
+                    </div>
+                </div>
+                <a class="vacancy-short__link-overlay" href="https://m.hh.ua/vacancy/25528947"
+                   data-qa="vacancy-link"></a></li>
+            <li class="vacancy-short vacancy-short_standard_plus HH-VacancyContacts-Item" id="vacancy_25434011"
+                data-qa="vacancy-item">
+                <div class="favorite-action">
+                    <form method="post" action="/favorite/add?vacancyId=25434011" class="HH-Favorite-Form">
+                        <input type="hidden" name="_xsrf" value="1de7669a35596983f198be3343ec3450">
+                        <input type="hidden" name="backurl"
+                               value="https://m.hh.ua/vacancies?text=java+%25s&amp;page=%25d#vacancy_25434011">
+                        <input type="hidden" name="vacancyId" value="25434011">
+                        <button type="submit" class="favorite-button
+
+
+                           HH-Favorite-Button" data-qa="favorites-add" data-action="add"></button>
+                    </form>
+                </div>
+                <div class="vacancy-short__name" data-qa="vacancy-name">
+                    Senior Java Full Stack Developer for Hyla Mobile (Minsk)
+                </div>
+                <span class="vacancy-short__city">Новосибирск</span>
+                <div class="vacancy-short__company">
+                    Ciklum&nbsp;
+                    <span class="bloko-icon bloko-icon_done bloko-icon_initial-action"></span>
+                </div>
+                <div class="vacancy-short__snippet">
+                    <p>Develop software applications and act as a technical resource to other team members for difficult
+                        architecture and development problems. </p>
+                    <p>7+ years of experience in building web based applications using <span
+                            class="highlight">Java</span>/JEE. 5+ years of experience in Spring...</p>
+                </div>
+                <div class="vacancy-short-footer">
+                    <div class="vacancy-short-footer-item">
+                        <div class="vacancy-short__pubdate" data-qa="vacancy-pubdate">
+                            23 апреля
+                        </div>
+                    </div>
+                    <div class="vacancy-short-footer-item">
+                        <a class="vacancy-short-footer__button-wrapper" href="/vacancy_response?vacancy_id=25434011">
+                            Откликнуться </a>
+                    </div>
+                </div>
+                <a class="vacancy-short__link-overlay" href="https://m.hh.ua/vacancy/25434011"
+                   data-qa="vacancy-link"></a></li>
+            <script data-name="Components/VacancyContacts"
+                    data-params="{&quot;vacancyStateVisible&quot;: &quot;vacancy-short__contacts_visible&quot;, &quot;vacancyResponseError&quot;: &quot;\u041f\u0440\u043e\u0438\u0437\u043e\u0448\u043b\u0430 \u043e\u0448\u0438\u0431\u043a\u0430. \u041f\u043e\u043f\u0440\u043e\u0431\u0443\u0439\u0442\u0435 \u0435\u0449\u0435 \u0440\u0430\u0437&quot;, &quot;vacancyTitleOnShow&quot;: &quot;\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u044b&quot;, &quot;vacancyTitleOnHide&quot;: &quot;\u0421\u043a\u0440\u044b\u0442\u044c&quot;, &quot;vacancyResponseError404&quot;: &quot;\u041f\u0440\u043e\u0438\u0437\u043e\u0448\u043b\u0430 \u043e\u0448\u0438\u0431\u043a\u0430. \u041f\u043e\u043f\u0440\u043e\u0431\u0443\u0439\u0442\u0435 \u043e\u0431\u043d\u043e\u0432\u0438\u0442\u044c \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443&quot;}"></script>
+        </ul>
+        <div class="banner-place-wrapper
+
+                     banner-place_separated
+
+                     banner-place_clickme
+                ">
+            <div class="banner-place banner-place_661" data-banner-id="661"></div>
+            <div class="banner-place banner-place_662" data-banner-id="662"></div>
+            <div class="banner-place banner-place_663" data-banner-id="663"></div>
+        </div>
+        <div class="paging" data-qa="paging-container">
+            <span class="paging-item paging-item_active" data-qa="paging-page">1</span>
+            <a class="paging-item" href="?text=java+%25s&amp;page=1">2</a>
+            <a class="paging-item" href="?text=java+%25s&amp;page=2">3</a>
+            <a class="paging-item" href="?text=java+%25s&amp;page=3">4</a>
+            <a class="paging-item" href="?text=java+%25s&amp;page=4">5</a>
+            <a class="paging-item paging-item_next" href="?text=java+%25s&amp;page=1" data-qa="paging-next">&nbsp;</a>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer__column">
+            <h3 class="footer__header">Приложения</h3>
+            <a href="https://redirect.appmetrica.yandex.com/serve/888999125113142013?banner=footer_m.hh"
+               class="footer-item footer-item_separated"> <span class="bloko-icon bloko-icon_android
+                                 bloko-icon_initial-inverted"></span> <span
+                    class="footer-item__description">Android</span> </a>
+            <a href="https://redirect.appmetrica.yandex.com/serve/24308004795012859?banner=footer_m.hh"
+               class="footer-item footer-item_separated"> <span class="bloko-icon bloko-icon_ios
+                                 bloko-icon_initial-inverted"></span> <span class="footer-item__description">iOS</span>
+            </a>
+            <a href="https://redirect.appmetrica.yandex.com/serve/312538381953293818?banner=footer_m.hh"
+               class="footer-item footer-item_separated"> <span class="bloko-icon bloko-icon_winphone
+                                 bloko-icon_initial-inverted"></span> <span
+                    class="footer-item__description">Windows</span> </a>
+            <p class="footer__copyright"> © 2000—2018<br> Группа компаний<br> HeadHunter </p>
+        </div>
+        <div class="footer__column">
+            <h3 class="footer__header">Соцсети</h3>
+            <a class="footer-item footer-item_separated" href="http://www.facebook.com/rabota.in.ukraine"
+               rel="nofollow noopener" target="_blank"> <span class="bloko-icon bloko-icon_fb
+                                 bloko-icon_initial-inverted"></span> <span
+                    class="footer-item__description">Facebook</span> </a>
+            <a class="footer-item footer-item_separated" href="https://twitter.com/headhunterua" rel="nofollow noopener"
+               target="_blank"> <span class="bloko-icon bloko-icon_twitter
+                                 bloko-icon_initial-inverted"></span> <span
+                    class="footer-item__description">Twitter</span> </a>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer__column">
+            <a class="footer-item hh-nomobile-link"
+               href="https://m.hh.ua/vacancies?text=java+%25s&amp;nomobile=&amp;page=%25d"
+               data-qa="footer-full-version"> <span class="logo logo_small"></span>
+                <script data-name="Components/TrackAnalyticsEvent"
+                        data-params="{&quot;category&quot;: &quot;mobile&quot;, &quot;on&quot;: &quot;click&quot;, &quot;event&quot;: &quot;exit-to-desktop&quot;, &quot;label&quot;: &quot;footer&quot;}"></script>
+                <span class="footer-item__description">Полная версия</span> </a>
+        </div>
+        <div class="footer__column">
+            <a class="footer-item" href="/lviv/catalog" data-qa="profareas"> <span class="footer-item__description"> Каталог отраслей </span>
+            </a>
+        </div>
+    </div>
+</div>
+<!--live-internet counter-->
+<script>
+            new Image().src="//counter.yadro.ru/hit;HeadHunter?t14.6;r"+escape(document.referrer)+
+                ((typeof(screen)=="undefined")?"":";s"+screen.width+"*"+screen.height+"*"+
+                        (screen.colorDepth?screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+";h"+
+                escape(document.title.substring(0,80))+";"+Math.random()
+
+</script>
+<!--/live-internet counter-->
+<!--bigmir counter-->
+<script type="text/javascript">
+        <!--
+            bmN=navigator,bmD=document,bmD.cookie='b=b',i=0,bs=[],bm={o:1,v:94760,s:94760,t:6,c:bmD.cookie?1:0,n:Math.round((Math.random()* 1000000)),w:0};
+            for(var f=self;f!=f.parent;f=f.parent)bm.w++;
+            try{if(bmN.plugins&&bmN.mimeTypes.length&&(x=bmN.plugins['Shockwave Flash']))bm.m=parseInt(x.description.replace(/([a-zA-Z]|\s)+/,''));
+            else for(var f=3;f<20;f++)if(eval('new ActiveXObject("ShockwaveFlash.ShockwaveFlash.'+f+'")'))bm.m=f}catch(e){;}
+            try{bm.y=bmN.javaEnabled()?1:0}catch(e){;}
+            try{bmS=screen;bm.v^=bm.d=bmS.colorDepth||bmS.pixelDepth;bm.v^=bm.r=bmS.width}catch(e){;}
+            r=bmD.referrer.replace(/^w+:\/\//,'');if(r&&r.split('/')[0]!=window.location.host){bm.f=escape(r).slice(0,400).slice(0,400);bm.v^=r.length}
+            bm.v^=window.location.href.length;for(var x in bm) if(/^[ovstcnwmydrf]$/.test(x)) bs[i++]=x+bm[x];
+            bmD.write('<sc'+'ript type="text/javascript" language="javascript" src="'+(bmD.location.protocol == 'https:' ? 'https:' : 'http:')+'//c.bigmir.net/?'+bs.join('&')+'"></sc'+'ript>');
+        //-->
+
+</script>
+<noscript>
+    <img src="//c.bigmir.net/?v94760&amp;s94760&amp;t6" width="0" height="0" alt="" title="" border="0">
+</noscript>
+<!--/bigmir counter-->
+<!--comscore counter-->
+<script>
+    var _comscore = _comscore || [];
+    _comscore.push({c1: "2", c2: "21790979", c4: "https://m.hh.ua/vacancies?text=java+%25s&amp;page=%25d"});
+    (function() {
+        var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+        s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+        el.parentNode.insertBefore(s, el);
+    })();
+
+</script>
+<noscript>
+    <img src="https://sb.scorecardresearch.com/p?c1=2&amp;c2=21790979&amp;c4=https%3A//m.hh.ua/vacancies%3Ftext%3Djava%2B%2525s%26page%3D%2525d">
+</noscript>
+<!--/comscore counter-->
+<!--hotjar counter-->
+<script>
+            (function(h,o,t,j,a,r){
+                h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                h._hjSettings={hjid:635155,hjsv:6};
+                a=o.getElementsByTagName('head')[0];
+                r=o.createElement('script');r.async=1;
+                r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                a.appendChild(r);
+            })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+
+</script>
+<!--/hotjar counter-->
+<!--fb-pixel counter-->
+<script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+            document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '1609348915763637');
+    fbq('track', 'PageView');
+    fbq('trackCustom', 'userType', {user_type: 'anonymous'});
+
+</script>
+<noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=1609348915763637&amp;ev=PageView&amp;noscript=1&amp;ev=userType&amp;cd[user_type]=anonymous">
+</noscript>
+<!--/fb-pixel counter-->
+<!--dmp1 counter-->
+<script>
+
+new Image().src="//sync.1dmp.io/pixel.gif?cid=1a38ad2d-8623-4917-b947-c595cdcab795&pid=ca7a9082-fb70-4d18-8da4-ca798bb2c7b8&brid=1fc3f848-e9c2-4f33-a954-6cf8e438598c&uid=66fc2107041f9ad00d7b858dcc2cba8bd0a4775c4a71be2beee60f2125f9e201";
+
+
+</script>
+<!--/dmp1 counter-->
+<!--google-universal-analytics counter-->
+<script async src="//www.google-analytics.com/analytics.js"></script>
+<!--/google-universal-analytics counter-->
+</body>
+</html>
