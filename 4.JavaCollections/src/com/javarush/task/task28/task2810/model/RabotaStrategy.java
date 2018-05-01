@@ -28,8 +28,8 @@ public class RabotaStrategy implements Strategy {
                         vacancy.setTitle(element.select("[class=fd-beefy-gunso f-vacancylist-vacancytitle]").first().text());
                         vacancy.setCity(element.select("[class=fd-merchant]").first().text());
                         vacancy.setCompanyName(element.select("[class=f-vacancylist-companyname fd-merchant f-text-dark-bluegray]").first().text());
-                        vacancy.setUrl(element.select("[class=fd-beefy-gunso f-vacancylist-vacancytitle]").first().attr("href"));
-                        vacancy.setSiteName("https://rabota.ua/");
+                        vacancy.setSiteName("https://rabota.ua");
+                        vacancy.setUrl(vacancy.getSiteName() + element.getElementsByAttribute("href").attr("href"));
 
                         Element salaryElement = element.select("[class=fd-beefy-soldier -price]").first();
                         String salary = "";
