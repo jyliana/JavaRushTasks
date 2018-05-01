@@ -3,6 +3,7 @@
 out
 *.xml
 *.iml
+*.html
 *.properties
 .idea
 4.JavaCollections/src/Test.java
