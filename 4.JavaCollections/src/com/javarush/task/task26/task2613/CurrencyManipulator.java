@@ -2,6 +2,7 @@ package com.javarush.task.task26.task2613;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class CurrencyManipulator {
     private String currencyCode;
@@ -19,5 +20,10 @@ public class CurrencyManipulator {
 
     public String getCurrencyCode() {
         return currencyCode;
+    }
+
+    public int getTotalAmount() {
+        return denominations.entrySet().stream()
+                .collect(Collectors.summingInt(key -> key.getKey() * key.getValue()));
     }
 }
