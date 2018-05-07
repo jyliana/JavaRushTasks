@@ -46,4 +46,21 @@ public class ConsoleHelper {
         return twoDigits;
     }
 
+    public static Operation askOperation() {
+        Operation operation = null;
+        writeMessage("Please choose operation: 1 - INFO, 2 - DEPOSIT, 3 - WITHDRAW, 4 - EXIT");
+        int number = 0;
+        try {
+            number = Integer.parseInt(readString());
+        } catch (NumberFormatException e) {
+        }
+        while (!String.valueOf(number).matches("^[1-4]{1}$")) {
+            writeMessage("Incorrect data, please choose operation again: 1 - INFO, 2 - DEPOSIT, 3 - WITHDRAW, 4 - EXIT");
+            try {
+                number = Integer.parseInt(readString());
+            } catch (NumberFormatException e) {
+            }
+        }
+        return Operation.getAllowableOperationByOrdinal(number);
+    }
 }
