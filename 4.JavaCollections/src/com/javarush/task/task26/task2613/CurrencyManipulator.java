@@ -26,4 +26,10 @@ public class CurrencyManipulator {
         return denominations.entrySet().stream()
                 .collect(Collectors.summingInt(key -> key.getKey() * key.getValue()));
     }
+
+    public boolean hasMoney() {
+        if (getTotalAmount() > 0)
+            return true;
+        return false;
+    }
 }

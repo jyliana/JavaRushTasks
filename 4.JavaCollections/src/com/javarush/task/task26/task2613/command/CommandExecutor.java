@@ -20,7 +20,7 @@ public class CommandExecutor {
     }
 
     public static final void execute(Operation operation) {
-       /* for (Map.Entry element : allKnownCommandsMap.entrySet()) {
+        /*for (Map.Entry element : allKnownCommandsMap.entrySet()) {
             if (element.getKey().equals(operation)) {
                 allKnownCommandsMap.get(operation).execute();
             }

@@ -47,7 +47,6 @@ public class ConsoleHelper {
     }
 
     public static Operation askOperation() {
-        Operation operation = null;
         writeMessage("Please choose operation: 1 - INFO, 2 - DEPOSIT, 3 - WITHDRAW, 4 - EXIT");
         int number = 0;
         try {
