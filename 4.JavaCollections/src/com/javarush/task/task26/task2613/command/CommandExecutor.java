@@ -1,6 +1,7 @@
 package com.javarush.task.task26.task2613.command;
 
 import com.javarush.task.task26.task2613.Operation;
+import com.javarush.task.task26.task2613.exception.InterruptOperationException;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,14 +20,14 @@ public class CommandExecutor {
 
     }
 
-    public static final void execute(Operation operation) {
-        /*for (Map.Entry element : allKnownCommandsMap.entrySet()) {
+    public static final void execute(Operation operation) throws InterruptOperationException {
+        for (Map.Entry element : allKnownCommandsMap.entrySet()) {
             if (element.getKey().equals(operation)) {
                 allKnownCommandsMap.get(operation).execute();
             }
-        }*/
-        allKnownCommandsMap.entrySet().stream()
+        }
+        /*allKnownCommandsMap.entrySet().stream()
                 .filter(n -> n.getKey().equals(operation))
-                .forEach(n -> n.getValue().execute());
+                .forEach(n -> n.getValue().execute());*/
     }
 }

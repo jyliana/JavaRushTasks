@@ -1,5 +1,7 @@
 package com.javarush.task.task26.task2613;
 
+import com.javarush.task.task26.task2613.exception.InterruptOperationException;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -11,17 +13,19 @@ public class ConsoleHelper {
         System.out.println(message);
     }
 
-    public static String readString() {
+    public static String readString() throws InterruptOperationException {
         String line = "";
         try {
             line = bis.readLine();
+            if (line.toUpperCase().equals("EXIT"))
+                throw new InterruptOperationException();
         } catch (IOException e) {
             e.printStackTrace();
         }
         return line;
     }
 
-    public static String askCurrencyCode() {
+    public static String askCurrencyCode() throws InterruptOperationException {
         writeMessage("Please enter currency code:");
         String line = readString();
 
@@ -33,7 +37,7 @@ public class ConsoleHelper {
         return line.toUpperCase();
     }
 
-    public static String[] getValidTwoDigits(String currencyCode) {
+    public static String[] getValidTwoDigits(String currencyCode) throws InterruptOperationException {
         writeMessage("Please enter 2 positive integer numbers: nominal and quantity of banknotes");
         String[] twoDigits = readString().split(" ");
 
@@ -46,7 +50,7 @@ public class ConsoleHelper {
         return twoDigits;
     }
 
-    public static Operation askOperation() {
+    public static Operation askOperation() throws InterruptOperationException {
         writeMessage("Please choose operation: 1 - INFO, 2 - DEPOSIT, 3 - WITHDRAW, 4 - EXIT");
         int number = 0;
         try {
