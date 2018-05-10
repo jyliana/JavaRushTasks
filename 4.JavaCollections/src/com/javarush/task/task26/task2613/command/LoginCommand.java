@@ -1,25 +1,27 @@
 package com.javarush.task.task26.task2613.command;
 
+import com.javarush.task.task26.task2613.CashMachine;
 import com.javarush.task.task26.task2613.ConsoleHelper;
 import com.javarush.task.task26.task2613.exception.InterruptOperationException;
 
+import java.util.ResourceBundle;
+
 public class LoginCommand implements Command {
-    private String cardNumber = "123456789012";
-    private String pin = "1234";
+    private ResourceBundle validCreditCards = ResourceBundle.getBundle(CashMachine.class.getPackage().getName() + ".resources.verifiedCards");
 
     @Override
     public void execute() throws InterruptOperationException {
-        String number = "";
-        String pincode = "";
+        String cardNumber = "";
+        String pin = "";
 
         while (true) {
             ConsoleHelper.writeMessage("Please enter card number:");
-            number = ConsoleHelper.readString();
+            cardNumber = ConsoleHelper.readString();
             ConsoleHelper.writeMessage("Please enter pin code:");
-            pincode = ConsoleHelper.readString();
+            pin = ConsoleHelper.readString();
 
-            if (number.matches("^\\d{12}$") && pincode.matches("^\\d{4}$")) {
-                if (number.equals(cardNumber) && pincode.equals(pin)) {
+            if (cardNumber.matches("^\\d{12}$") && pin.matches("^\\d{4}$")) {
+                if (validCreditCards.containsKey(cardNumber) && validCreditCards.getString(cardNumber).equals(pin)) {
                     ConsoleHelper.writeMessage("Verification was successfully passed.");
                     return;
                 }
