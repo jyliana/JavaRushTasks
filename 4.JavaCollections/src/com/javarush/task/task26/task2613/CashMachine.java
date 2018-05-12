@@ -6,6 +6,8 @@ import com.javarush.task.task26.task2613.exception.InterruptOperationException;
 import java.util.Locale;
 
 public class CashMachine {
+    public static final String RESOURCE_PATH = CashMachine.class.getPackage().getName() + ".resources.";
+
     public static void main(String[] args) {
         Locale.setDefault(Locale.ENGLISH);
         /*String code = ConsoleHelper.askCurrencyCode();
@@ -15,7 +17,7 @@ public class CashMachine {
         System.out.println(currencyManipulator.getTotalAmount());*/
         /*System.out.println(ConsoleHelper.askOperation());*/
         try {
-            /*CommandExecutor.execute(Operation.LOGIN);*/
+            CommandExecutor.execute(Operation.LOGIN);
             Operation operation;
             do {
                 operation = ConsoleHelper.askOperation();
@@ -23,7 +25,7 @@ public class CashMachine {
             }
             while (!operation.equals(Operation.EXIT));
         } catch (InterruptOperationException e) {
-            ConsoleHelper.writeMessage("Operation was terminated! Bye!");
+            ConsoleHelper.printExitMessage();
         }
     }
 }
