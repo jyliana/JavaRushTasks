@@ -15,7 +15,7 @@ public class CashMachine {
         System.out.println(currencyManipulator.getTotalAmount());*/
         /*System.out.println(ConsoleHelper.askOperation());*/
         try {
-            CommandExecutor.execute(Operation.LOGIN);
+            /*CommandExecutor.execute(Operation.LOGIN);*/
             Operation operation;
             do {
                 operation = ConsoleHelper.askOperation();
