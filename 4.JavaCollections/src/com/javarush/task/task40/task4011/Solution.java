@@ -10,7 +10,7 @@ import java.net.URL;
 
 public class Solution {
     public static void main(String[] args) throws IOException {
-        decodeURLString("www.amrood.com/index.htm?language=en#j2se");
+        decodeURLString("https://www.amrood.com/index.htm?language=en#j2se");
     }
 
     public static void decodeURLString(String s) throws MalformedURLException {
