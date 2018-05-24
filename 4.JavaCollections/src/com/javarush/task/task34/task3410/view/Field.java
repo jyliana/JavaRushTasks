@@ -34,7 +34,7 @@ public class Field extends JPanel {
         home.draw(g);
         wall.draw(g);*/
         g.setColor(Color.BLACK);
-        g.fillRect(0, 0, 490, 510);
+        g.fillRect(0, 0, 300, 300);
 
         Set<GameObject> objects = view.getGameObjects().getAll();
         objects.stream().forEach(object -> object.draw(g));
